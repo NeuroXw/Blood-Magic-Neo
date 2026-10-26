@@ -3,6 +3,10 @@
 
 This is an early Alpha community port. The goal is to bring the core mechanics of Blood Magic into the new 26.1.2 environment using NeoForge. 
 
+> **Disclaimer:** This is a fan-made port and is not affiliated with, endorsed by, or maintained by WayofTime or the official Blood Magic team. For the official mod, see [WayofTime/BloodMagic](https://github.com/WayofTime/BloodMagic).
+> 
+> *Backup your worlds before playing this Alpha build.*
+
 **Please read the Known Issues before playing. Backup your worlds!**
 
 ## Current Features
