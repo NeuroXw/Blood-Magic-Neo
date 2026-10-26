@@ -1,0 +1,465 @@
+{
+  "upstream": "35f0188665e648d981095b6933cc75b0ca96eca5",
+  "blocks": [
+    {
+      "field": "BLANK_RUNE",
+      "id": "blankrune",
+      "kind": "rune",
+      "runeType": "BLANK",
+      "strength": 1
+    },
+    {
+      "field": "SPEED_RUNE",
+      "id": "speedrune",
+      "kind": "rune",
+      "runeType": "SPEED",
+      "strength": 1
+    },
+    {
+      "field": "SACRIFICE_RUNE",
+      "id": "sacrificerune",
+      "kind": "rune",
+      "runeType": "SACRIFICE",
+      "strength": 1
+    },
+    {
+      "field": "SELF_SACRIFICE_RUNE",
+      "id": "selfsacrificerune",
+      "kind": "rune",
+      "runeType": "SELF_SACRIFICE",
+      "strength": 1
+    },
+    {
+      "field": "DISPLACEMENT_RUNE",
+      "id": "dislocationrune",
+      "kind": "rune",
+      "runeType": "DISPLACEMENT",
+      "strength": 1
+    },
+    {
+      "field": "CAPACITY_RUNE",
+      "id": "altarcapacityrune",
+      "kind": "rune",
+      "runeType": "CAPACITY",
+      "strength": 1
+    },
+    {
+      "field": "AUGMENTED_CAPACITY_RUNE",
+      "id": "bettercapacityrune",
+      "kind": "rune",
+      "runeType": "AUGMENTED_CAPACITY",
+      "strength": 1
+    },
+    {
+      "field": "ORB_RUNE",
+      "id": "orbcapacityrune",
+      "kind": "rune",
+      "runeType": "ORB",
+      "strength": 1
+    },
+    {
+      "field": "ACCELERATION_RUNE",
+      "id": "accelerationrune",
+      "kind": "rune",
+      "runeType": "ACCELERATION",
+      "strength": 1
+    },
+    {
+      "field": "CHARGING_RUNE",
+      "id": "chargingrune",
+      "kind": "rune",
+      "runeType": "CHARGING",
+      "strength": 1
+    },
+    {
+      "field": "SELF_SACRIFICE_RUNE_2",
+      "id": "selfsacrificerune2",
+      "kind": "rune",
+      "runeType": "SELF_SACRIFICE",
+      "strength": 2
+    },
+    {
+      "field": "SPEED_RUNE_2",
+      "id": "speedrune2",
+      "kind": "rune",
+      "runeType": "SPEED",
+      "strength": 2
+    },
+    {
+      "field": "SACRIFICE_RUNE_2",
+      "id": "sacrificerune2",
+      "kind": "rune",
+      "runeType": "SACRIFICE",
+      "strength": 2
+    },
+    {
+      "field": "DISPLACEMENT_RUNE_2",
+      "id": "dislocationrune2",
+      "kind": "rune",
+      "runeType": "DISPLACEMENT",
+      "strength": 2
+    },
+    {
+      "field": "CAPACITY_RUNE_2",
+      "id": "altarcapacityrune2",
+      "kind": "rune",
+      "runeType": "CAPACITY",
+      "strength": 2
+    },
+    {
+      "field": "AUGMENTED_CAPACITY_RUNE_2",
+      "id": "bettercapacityrune2",
+      "kind": "rune",
+      "runeType": "AUGMENTED_CAPACITY",
+      "strength": 2
+    },
+    {
+      "field": "ORB_RUNE_2",
+      "id": "orbcapacityrune2",
+      "kind": "rune",
+      "runeType": "ORB",
+      "strength": 2
+    },
+    {
+      "field": "ACCELERATION_RUNE_2",
+      "id": "accelerationrune2",
+      "kind": "rune",
+      "runeType": "ACCELERATION",
+      "strength": 2
+    },
+    {
+      "field": "CHARGING_RUNE_2",
+      "id": "chargingrune2",
+      "kind": "rune",
+      "runeType": "CHARGING",
+      "strength": 2
+    },
+    {
+      "field": "BLOODSTONE",
+      "id": "largebloodstonebrick",
+      "kind": "simple"
+    },
+    {
+      "field": "BLOODSTONE_BRICK",
+      "id": "bloodstonebrick",
+      "kind": "simple"
+    },
+    {
+      "field": "BLOOD_ALTAR",
+      "id": "altar",
+      "kind": "stub"
+    },
+    {
+      "field": "HELLFORGED_BLOCK",
+      "id": "dungeon_metal",
+      "kind": "basic"
+    }
+  ],
+  "items": [
+    {
+      "field": "SLATE",
+      "id": "blankslate",
+      "kind": "material"
+    },
+    {
+      "field": "REINFORCED_SLATE",
+      "id": "reinforcedslate",
+      "kind": "material"
+    },
+    {
+      "field": "IMBUED_SLATE",
+      "id": "infusedslate",
+      "kind": "material"
+    },
+    {
+      "field": "DEMONIC_SLATE",
+      "id": "demonslate",
+      "kind": "material"
+    },
+    {
+      "field": "ETHEREAL_SLATE",
+      "id": "etherealslate",
+      "kind": "material"
+    },
+    {
+      "field": "WEAK_BLOOD_SHARD",
+      "id": "weakbloodshard",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_WATER",
+      "id": "reagentwater",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_LAVA",
+      "id": "reagentlava",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_VOID",
+      "id": "reagentvoid",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_GROWTH",
+      "id": "reagentgrowth",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_FAST_MINER",
+      "id": "reagentfastminer",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_MAGNETISM",
+      "id": "reagentmagnetism",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_AIR",
+      "id": "reagentair",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_BLOOD_LIGHT",
+      "id": "reagentbloodlight",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_SIGHT",
+      "id": "reagentsight",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_BINDING",
+      "id": "reagentbinding",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_HOLDING",
+      "id": "reagentholding",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_SUPPRESSION",
+      "id": "reagentsuppression",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_TELEPOSITION",
+      "id": "reagentteleposition",
+      "kind": "material"
+    },
+    {
+      "field": "REAGENT_FROST",
+      "id": "reagentfrost",
+      "kind": "material"
+    },
+    {
+      "field": "HELLFORGED_PARTS",
+      "id": "hellforgedparts",
+      "kind": "material"
+    },
+    {
+      "field": "SULFUR",
+      "id": "sulfur",
+      "kind": "material"
+    },
+    {
+      "field": "SALTPETER",
+      "id": "saltpeter",
+      "kind": "material"
+    },
+    {
+      "field": "PLANT_OIL",
+      "id": "plantoil",
+      "kind": "material"
+    },
+    {
+      "field": "TAU_OIL",
+      "id": "tauoil",
+      "kind": "material"
+    },
+    {
+      "field": "SIMPLE_CATALYST",
+      "id": "simplecatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "STRENGTHENED_CATALYST",
+      "id": "strengthenedcatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "MUNDANE_POWER_CATALYST",
+      "id": "mundanepowercatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "MUNDANE_LENGTHENING_CATALYST",
+      "id": "mundanelengtheningcatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "COMBINATIONAL_CATALYST",
+      "id": "combinationalcatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "WEAK_FILLING_AGENT",
+      "id": "weakfillingagent",
+      "kind": "material"
+    },
+    {
+      "field": "CYCLING_CATALYST",
+      "id": "cyclingcatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "AVERAGE_POWER_CATALYST",
+      "id": "averagepowercatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "AVERAGE_LENGTHENING_CATALYST",
+      "id": "averagelengtheningcatalyst",
+      "kind": "material"
+    },
+    {
+      "field": "AVERAGE_FILLING_AGENT",
+      "id": "standardfillingagent",
+      "kind": "material"
+    },
+    {
+      "field": "SLATE_VIAL",
+      "id": "slate_vial",
+      "kind": "material"
+    },
+    {
+      "field": "IRON_FRAGMENT",
+      "id": "ironfragment",
+      "kind": "material"
+    },
+    {
+      "field": "GOLD_FRAGMENT",
+      "id": "goldfragment",
+      "kind": "material"
+    },
+    {
+      "field": "COPPER_FRAGMENT",
+      "id": "copperfragment",
+      "kind": "material"
+    },
+    {
+      "field": "NETHERITE_SCRAP_FRAGMENT",
+      "id": "fragment_netherite_scrap",
+      "kind": "material"
+    },
+    {
+      "field": "DEMONITE_FRAGMENT",
+      "id": "demonitefragment",
+      "kind": "material"
+    },
+    {
+      "field": "IRON_GRAVEL",
+      "id": "irongravel",
+      "kind": "material"
+    },
+    {
+      "field": "GOLD_GRAVEL",
+      "id": "goldgravel",
+      "kind": "material"
+    },
+    {
+      "field": "COPPER_GRAVEL",
+      "id": "coppergravel",
+      "kind": "material"
+    },
+    {
+      "field": "NETHERITE_SCRAP_GRAVEL",
+      "id": "gravel_netherite_scrap",
+      "kind": "material"
+    },
+    {
+      "field": "DEMONITE_GRAVEL",
+      "id": "demonitegravel",
+      "kind": "material"
+    },
+    {
+      "field": "IRON_SAND",
+      "id": "ironsand",
+      "kind": "material"
+    },
+    {
+      "field": "GOLD_SAND",
+      "id": "goldsand",
+      "kind": "material"
+    },
+    {
+      "field": "COPPER_SAND",
+      "id": "coppersand",
+      "kind": "material"
+    },
+    {
+      "field": "COAL_SAND",
+      "id": "coalsand",
+      "kind": "material"
+    },
+    {
+      "field": "NETHERITE_SCRAP_SAND",
+      "id": "sand_netherite",
+      "kind": "material"
+    },
+    {
+      "field": "CORRUPTED_DUST",
+      "id": "corrupted_dust",
+      "kind": "material"
+    },
+    {
+      "field": "CORRUPTED_DUST_TINY",
+      "id": "corrupted_tinydust",
+      "kind": "material"
+    },
+    {
+      "field": "HELLFORGED_SAND",
+      "id": "sand_hellforged",
+      "kind": "material"
+    },
+    {
+      "field": "DEMONITE_RAW",
+      "id": "rawdemonite",
+      "kind": "material"
+    },
+    {
+      "field": "HELLFORGED_INGOT",
+      "id": "ingot_hellforged",
+      "kind": "material"
+    },
+    {
+      "field": "WEAK_BLOOD_ORB",
+      "id": "weakbloodorb",
+      "kind": "stub"
+    },
+    {
+      "field": "APPRENTICE_BLOOD_ORB",
+      "id": "apprenticebloodorb",
+      "kind": "stub"
+    },
+    {
+      "field": "MAGICIAN_BLOOD_ORB",
+      "id": "magicianbloodorb",
+      "kind": "stub"
+    },
+    {
+      "field": "MASTER_BLOOD_ORB",
+      "id": "masterbloodorb",
+      "kind": "stub"
+    },
+    {
+      "field": "ARCHMAGE_BLOOD_ORB",
+      "id": "archmagebloodorb",
+      "kind": "stub"
+    }
+  ]
+}

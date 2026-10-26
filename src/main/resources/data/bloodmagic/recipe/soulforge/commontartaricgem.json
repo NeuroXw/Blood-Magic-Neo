@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:soulforge",
+  "drain": 50.0,
+  "minimumDrain": 240.0,
+  "output": {
+    "id": "bloodmagic:soulgemcommon"
+  },
+  "input": [
+    "bloodmagic:soulgemlesser",
+    "#c:gems/diamond",
+    "#c:storage_blocks/gold",
+    "bloodmagic:infusedslate"
+  ]
+}

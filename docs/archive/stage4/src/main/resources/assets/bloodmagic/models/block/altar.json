@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "all": "bloodmagic:block/blankrune"
+  },
+  "parent": "minecraft:block/cube_all"
+}

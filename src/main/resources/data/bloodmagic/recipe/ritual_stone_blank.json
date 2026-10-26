@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "minecraft:obsidian",
+    "b": "bloodmagic:reinforcedslate",
+    "c": "#bloodmagic:blood_orbs/tier_2"
+  },
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "result": {
+    "count": 4,
+    "id": "bloodmagic:ritualstone"
+  },
+  "show_notification": true
+}

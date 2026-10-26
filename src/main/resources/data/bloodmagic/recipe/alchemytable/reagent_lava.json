@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:alchemytable",
+  "input": [
+    "minecraft:lava_bucket",
+    "#c:dusts/redstone",
+    "#c:cobblestones",
+    "#c:storage_blocks/coal"
+  ],
+  "output": {
+    "id": "bloodmagic:reagentlava"
+  },
+  "syphon": 1000,
+  "ticks": 200,
+  "upgradeLevel": 1
+}

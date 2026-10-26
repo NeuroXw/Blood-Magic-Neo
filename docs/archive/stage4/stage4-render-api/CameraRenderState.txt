@@ -1,0 +1,19 @@
+Compiled from "CameraRenderState.java"
+public class net.minecraft.client.renderer.state.level.CameraRenderState {
+  public net.minecraft.core.BlockPos blockPos;
+  public net.minecraft.world.phys.Vec3 pos;
+  public float xRot;
+  public float yRot;
+  public boolean initialized;
+  public boolean isPanoramicMode;
+  public org.joml.Quaternionf orientation;
+  public net.minecraft.client.renderer.culling.Frustum cullFrustum;
+  public net.minecraft.world.level.material.FogType fogType;
+  public net.minecraft.client.renderer.fog.FogData fogData;
+  public float hudFov;
+  public float depthFar;
+  public org.joml.Matrix4f projectionMatrix;
+  public org.joml.Matrix4f viewRotationMatrix;
+  public net.minecraft.client.renderer.state.level.CameraEntityRenderState entityRenderState;
+  public net.minecraft.client.renderer.state.level.CameraRenderState();
+}

@@ -1,0 +1,190 @@
+Compiled from "CampfireRenderer.java"
+public class net.minecraft.client.renderer.blockentity.CampfireRenderer implements net.minecraft.client.renderer.blockentity.BlockEntityRenderer<net.minecraft.world.level.block.entity.CampfireBlockEntity, net.minecraft.client.renderer.blockentity.state.CampfireRenderState> {
+  private static final float SIZE;
+
+  private final net.minecraft.client.renderer.item.ItemModelResolver itemModelResolver;
+
+  public net.minecraft.client.renderer.blockentity.CampfireRenderer(net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider$Context);
+    Code:
+         0: aload_0
+         1: invokespecial #33                 // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: invokevirtual #36                 // Method net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context.itemModelResolver:()Lnet/minecraft/client/renderer/item/ItemModelResolver;
+         9: putfield      #38                 // Field itemModelResolver:Lnet/minecraft/client/renderer/item/ItemModelResolver;
+        12: return
+
+  public net.minecraft.client.renderer.blockentity.state.CampfireRenderState createRenderState();
+    Code:
+         0: new           #45                 // class net/minecraft/client/renderer/blockentity/state/CampfireRenderState
+         3: dup
+         4: invokespecial #46                 // Method net/minecraft/client/renderer/blockentity/state/CampfireRenderState."<init>":()V
+         7: areturn
+
+  public void extractRenderState(net.minecraft.world.level.block.entity.CampfireBlockEntity, net.minecraft.client.renderer.blockentity.state.CampfireRenderState, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: fload_3
+         4: aload         4
+         6: aload         5
+         8: invokespecial #57                 // InterfaceMethod net/minecraft/client/renderer/blockentity/BlockEntityRenderer.extractRenderState:(Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;FLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+        11: aload_2
+        12: aload_1
+        13: invokevirtual #63                 // Method net/minecraft/world/level/block/entity/CampfireBlockEntity.getBlockState:()Lnet/minecraft/world/level/block/state/BlockState;
+        16: getstatic     #69                 // Field net/minecraft/world/level/block/CampfireBlock.FACING:Lnet/minecraft/world/level/block/state/properties/EnumProperty;
+        19: invokevirtual #75                 // Method net/minecraft/world/level/block/state/BlockState.getValue:(Lnet/minecraft/world/level/block/state/properties/Property;)Ljava/lang/Comparable;
+        22: checkcast     #77                 // class net/minecraft/core/Direction
+        25: putfield      #81                 // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.facing:Lnet/minecraft/core/Direction;
+        28: aload_1
+        29: invokevirtual #85                 // Method net/minecraft/world/level/block/entity/CampfireBlockEntity.getBlockPos:()Lnet/minecraft/core/BlockPos;
+        32: invokevirtual #91                 // Method net/minecraft/core/BlockPos.asLong:()J
+        35: l2i
+        36: istore        6
+        38: aload_2
+        39: new           #93                 // class java/util/ArrayList
+        42: dup
+        43: invokespecial #94                 // Method java/util/ArrayList."<init>":()V
+        46: putfield      #98                 // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.items:Ljava/util/List;
+        49: iconst_0
+        50: istore        7
+        52: iload         7
+        54: aload_1
+        55: invokevirtual #102                // Method net/minecraft/world/level/block/entity/CampfireBlockEntity.getItems:()Lnet/minecraft/core/NonNullList;
+        58: invokevirtual #108                // Method net/minecraft/core/NonNullList.size:()I
+        61: if_icmpge     125
+        64: new           #110                // class net/minecraft/client/renderer/item/ItemStackRenderState
+        67: dup
+        68: invokespecial #111                // Method net/minecraft/client/renderer/item/ItemStackRenderState."<init>":()V
+        71: astore        8
+        73: aload_0
+        74: getfield      #38                 // Field itemModelResolver:Lnet/minecraft/client/renderer/item/ItemModelResolver;
+        77: aload         8
+        79: aload_1
+        80: invokevirtual #102                // Method net/minecraft/world/level/block/entity/CampfireBlockEntity.getItems:()Lnet/minecraft/core/NonNullList;
+        83: iload         7
+        85: invokevirtual #115                // Method net/minecraft/core/NonNullList.get:(I)Ljava/lang/Object;
+        88: checkcast     #117                // class net/minecraft/world/item/ItemStack
+        91: getstatic     #123                // Field net/minecraft/world/item/ItemDisplayContext.FIXED:Lnet/minecraft/world/item/ItemDisplayContext;
+        94: aload_1
+        95: invokevirtual #127                // Method net/minecraft/world/level/block/entity/CampfireBlockEntity.getLevel:()Lnet/minecraft/world/level/Level;
+        98: aconst_null
+        99: iload         6
+       101: iload         7
+       103: iadd
+       104: invokevirtual #133                // Method net/minecraft/client/renderer/item/ItemModelResolver.updateForTopItem:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/ItemOwner;I)V
+       107: aload_2
+       108: getfield      #98                 // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.items:Ljava/util/List;
+       111: aload         8
+       113: invokeinterface #139,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       118: pop
+       119: iinc          7, 1
+       122: goto          52
+       125: return
+
+  public void submit(net.minecraft.client.renderer.blockentity.state.CampfireRenderState, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+    Code:
+         0: aload_1
+         1: getfield      #81                 // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.facing:Lnet/minecraft/core/Direction;
+         4: astore        5
+         6: aload_1
+         7: getfield      #98                 // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.items:Ljava/util/List;
+        10: astore        6
+        12: iconst_0
+        13: istore        7
+        15: iload         7
+        17: aload         6
+        19: invokeinterface #154,  1          // InterfaceMethod java/util/List.size:()I
+        24: if_icmpge     158
+        27: aload         6
+        29: iload         7
+        31: invokeinterface #155,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+        36: checkcast     #110                // class net/minecraft/client/renderer/item/ItemStackRenderState
+        39: astore        8
+        41: aload         8
+        43: invokevirtual #159                // Method net/minecraft/client/renderer/item/ItemStackRenderState.isEmpty:()Z
+        46: ifne          152
+        49: aload_2
+        50: invokevirtual #164                // Method com/mojang/blaze3d/vertex/PoseStack.pushPose:()V
+        53: aload_2
+        54: ldc           #165                // float 0.5f
+        56: ldc           #166                // float 0.44921875f
+        58: ldc           #165                // float 0.5f
+        60: invokevirtual #170                // Method com/mojang/blaze3d/vertex/PoseStack.translate:(FFF)V
+        63: iload         7
+        65: aload         5
+        67: invokevirtual #173                // Method net/minecraft/core/Direction.get2DDataValue:()I
+        70: iadd
+        71: iconst_4
+        72: irem
+        73: invokestatic  #177                // Method net/minecraft/core/Direction.from2DDataValue:(I)Lnet/minecraft/core/Direction;
+        76: astore        9
+        78: aload         9
+        80: invokevirtual #181                // Method net/minecraft/core/Direction.toYRot:()F
+        83: fneg
+        84: fstore        10
+        86: aload_2
+        87: getstatic     #187                // Field com/mojang/math/Axis.YP:Lcom/mojang/math/Axis;
+        90: fload         10
+        92: invokeinterface #191,  2          // InterfaceMethod com/mojang/math/Axis.rotationDegrees:(F)Lorg/joml/Quaternionf;
+        97: invokevirtual #195                // Method com/mojang/blaze3d/vertex/PoseStack.mulPose:(Lorg/joml/Quaternionfc;)V
+       100: aload_2
+       101: getstatic     #198                // Field com/mojang/math/Axis.XP:Lcom/mojang/math/Axis;
+       104: ldc           #199                // float 90.0f
+       106: invokeinterface #191,  2          // InterfaceMethod com/mojang/math/Axis.rotationDegrees:(F)Lorg/joml/Quaternionf;
+       111: invokevirtual #195                // Method com/mojang/blaze3d/vertex/PoseStack.mulPose:(Lorg/joml/Quaternionfc;)V
+       114: aload_2
+       115: ldc           #200                // float -0.3125f
+       117: ldc           #200                // float -0.3125f
+       119: fconst_0
+       120: invokevirtual #170                // Method com/mojang/blaze3d/vertex/PoseStack.translate:(FFF)V
+       123: aload_2
+       124: ldc           #25                 // float 0.375f
+       126: ldc           #25                 // float 0.375f
+       128: ldc           #25                 // float 0.375f
+       130: invokevirtual #203                // Method com/mojang/blaze3d/vertex/PoseStack.scale:(FFF)V
+       133: aload         8
+       135: aload_2
+       136: aload_3
+       137: aload_1
+       138: getfield      #206                // Field net/minecraft/client/renderer/blockentity/state/CampfireRenderState.lightCoords:I
+       141: getstatic     #211                // Field net/minecraft/client/renderer/texture/OverlayTexture.NO_OVERLAY:I
+       144: iconst_0
+       145: invokevirtual #214                // Method net/minecraft/client/renderer/item/ItemStackRenderState.submit:(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;III)V
+       148: aload_2
+       149: invokevirtual #217                // Method com/mojang/blaze3d/vertex/PoseStack.popPose:()V
+       152: iinc          7, 1
+       155: goto          15
+       158: return
+
+  public void submit(net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #45                 // class net/minecraft/client/renderer/blockentity/state/CampfireRenderState
+         5: aload_2
+         6: aload_3
+         7: aload         4
+         9: invokevirtual #226                // Method submit:(Lnet/minecraft/client/renderer/blockentity/state/CampfireRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V
+        12: return
+
+  public void extractRenderState(net.minecraft.world.level.block.entity.BlockEntity, net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #59                 // class net/minecraft/world/level/block/entity/CampfireBlockEntity
+         5: aload_2
+         6: checkcast     #45                 // class net/minecraft/client/renderer/blockentity/state/CampfireRenderState
+         9: fload_3
+        10: aload         4
+        12: aload         5
+        14: invokevirtual #228                // Method extractRenderState:(Lnet/minecraft/world/level/block/entity/CampfireBlockEntity;Lnet/minecraft/client/renderer/blockentity/state/CampfireRenderState;FLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+        17: return
+
+  public net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState createRenderState();
+    Code:
+         0: aload_0
+         1: invokevirtual #231                // Method createRenderState:()Lnet/minecraft/client/renderer/blockentity/state/CampfireRenderState;
+         4: areturn
+}

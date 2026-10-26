@@ -1,0 +1,57 @@
+[
+  {
+    "path": "bloodmagic-neoforge-0.1.0-stage3.jar",
+    "sha256": "A3089B4EB168275D0219D87EFF83978FA28699CDDD9DCA39425BDE0F81C730F7",
+    "bytes": 266833
+  },
+  {
+    "path": "build-stage3-server-result.log",
+    "sha256": "95E9ED0C70A9A0D558C3FA2E2B796112B37FF281AB84C1EC42CCD6DC55142CF8",
+    "bytes": 1554
+  },
+  {
+    "path": "build-stage3-smoke-restart.log",
+    "sha256": "9424A649B2A3A9FCFA042D6DDB04037A5A3B6D782496F4524AA088638E800CF1",
+    "bytes": 15830
+  },
+  {
+    "path": "build-stage3-smoke-write.log",
+    "sha256": "3CADC96AFD230765997EF7EC6E03320CDADB33A2F3D99E0678472D8447D816AD",
+    "bytes": 16170
+  },
+  {
+    "path": "README.md",
+    "sha256": "DA03E850EA8736043DFA32EFFC6BD152EF1580649C9A14F230EB6907E1FC2515",
+    "bytes": 606
+  },
+  {
+    "path": "run-server-stage3.log",
+    "sha256": "2F93A4617227670A18D2A7BA7CB403F3FCCD475800711DE3622C8B367CF47F93",
+    "bytes": 13076
+  },
+  {
+    "path": "STAGE3_REPORT.md",
+    "sha256": "432D62E1BC77D05161B242AE45E4471C6EF972513DA640045E856D023DF422D1",
+    "bytes": 15242
+  },
+  {
+    "path": "stage3-content.json",
+    "sha256": "84FED8AF7BD87FC657EAF19D787F4687D08DC7AA95912F01445E7C599F89BC70",
+    "bytes": 10066
+  },
+  {
+    "path": "test-sources/java/wayoftime/bloodmagic/test/AltarGameplayChecks.java",
+    "sha256": "A401E14D943EFFFEDC4C4B579BE8624CE16D02279DE410F28E26D75F06993D97",
+    "bytes": 25919
+  },
+  {
+    "path": "test-sources/java/wayoftime/bloodmagic/test/AltarReloadChecks.java",
+    "sha256": "BC3A08CE994A825006B3CE289F5451FB3C41AC7C8ED9E0DFED514CB4D0074308",
+    "bytes": 4897
+  },
+  {
+    "path": "test-sources/java/wayoftime/bloodmagic/test/Stage3SmokeChecks.java",
+    "sha256": "705F364CB7DC2472CD5FB1572D1C25FD0AF72B492C4AE3D065B562442C82DAA7",
+    "bytes": 13666
+  }
+]

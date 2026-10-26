@@ -1,0 +1,150 @@
+Compiled from "ItemModelResolver.java"
+public class net.minecraft.client.renderer.item.ItemModelResolver {
+  private final net.minecraft.client.resources.model.ModelManager modelManager;
+
+  public net.minecraft.client.renderer.item.ItemModelResolver(net.minecraft.client.resources.model.ModelManager);
+    Code:
+         0: aload_0
+         1: invokespecial #21                 // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: putfield      #23                 // Field modelManager:Lnet/minecraft/client/resources/model/ModelManager;
+         9: return
+
+  private net.minecraft.client.renderer.item.ClientItem$Properties getItemProperties(net.minecraft.resources.Identifier);
+    Code:
+         0: aload_0
+         1: getfield      #23                 // Field modelManager:Lnet/minecraft/client/resources/model/ModelManager;
+         4: aload_1
+         5: invokevirtual #32                 // Method net/minecraft/client/resources/model/ModelManager.getItemProperties:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ClientItem$Properties;
+         8: areturn
+
+  private net.minecraft.client.renderer.item.ItemModel getItemModel(net.minecraft.resources.Identifier);
+    Code:
+         0: aload_0
+         1: getfield      #23                 // Field modelManager:Lnet/minecraft/client/resources/model/ModelManager;
+         4: aload_1
+         5: invokevirtual #37                 // Method net/minecraft/client/resources/model/ModelManager.getItemModel:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ItemModel;
+         8: areturn
+
+  public void updateForLiving(net.minecraft.client.renderer.item.ItemStackRenderState, net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemDisplayContext, net.minecraft.world.entity.LivingEntity);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: aload_3
+         4: aload         4
+         6: invokevirtual #49                 // Method net/minecraft/world/entity/LivingEntity.level:()Lnet/minecraft/world/level/Level;
+         9: aload         4
+        11: aload         4
+        13: invokevirtual #53                 // Method net/minecraft/world/entity/LivingEntity.getId:()I
+        16: aload_3
+        17: invokevirtual #58                 // Method net/minecraft/world/item/ItemDisplayContext.ordinal:()I
+        20: iadd
+        21: invokevirtual #62                 // Method updateForTopItem:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/ItemOwner;I)V
+        24: return
+
+  public void updateForNonLiving(net.minecraft.client.renderer.item.ItemStackRenderState, net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemDisplayContext, net.minecraft.world.entity.Entity);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: aload_3
+         4: aload         4
+         6: invokevirtual #71                 // Method net/minecraft/world/entity/Entity.level:()Lnet/minecraft/world/level/Level;
+         9: aload         4
+        11: aload         4
+        13: invokevirtual #72                 // Method net/minecraft/world/entity/Entity.getId:()I
+        16: invokevirtual #62                 // Method updateForTopItem:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/ItemOwner;I)V
+        19: return
+
+  public void updateForTopItem(net.minecraft.client.renderer.item.ItemStackRenderState, net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemDisplayContext, net.minecraft.world.level.Level, net.minecraft.world.entity.ItemOwner, int);
+    Code:
+         0: aload_1
+         1: invokevirtual #81                 // Method net/minecraft/client/renderer/item/ItemStackRenderState.clear:()V
+         4: aload_2
+         5: invokevirtual #87                 // Method net/minecraft/world/item/ItemStack.isEmpty:()Z
+         8: ifne          29
+        11: aload_1
+        12: aload_3
+        13: putfield      #89                 // Field net/minecraft/client/renderer/item/ItemStackRenderState.displayContext:Lnet/minecraft/world/item/ItemDisplayContext;
+        16: aload_0
+        17: aload_1
+        18: aload_2
+        19: aload_3
+        20: aload         4
+        22: aload         5
+        24: iload         6
+        26: invokevirtual #92                 // Method appendItemLayers:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/ItemOwner;I)V
+        29: return
+
+  public void appendItemLayers(net.minecraft.client.renderer.item.ItemStackRenderState, net.minecraft.world.item.ItemStack, net.minecraft.world.item.ItemDisplayContext, net.minecraft.world.level.Level, net.minecraft.world.entity.ItemOwner, int);
+    Code:
+         0: aload_2
+         1: getstatic     #101                // Field net/minecraft/core/component/DataComponents.ITEM_MODEL:Lnet/minecraft/core/component/DataComponentType;
+         4: invokevirtual #105                // Method net/minecraft/world/item/ItemStack.get:(Lnet/minecraft/core/component/DataComponentType;)Ljava/lang/Object;
+         7: checkcast     #107                // class net/minecraft/resources/Identifier
+        10: astore        7
+        12: aload         7
+        14: ifnull        70
+        17: aload_1
+        18: aload_0
+        19: aload         7
+        21: invokevirtual #108                // Method getItemProperties:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ClientItem$Properties;
+        24: invokevirtual #111                // Method net/minecraft/client/renderer/item/ClientItem$Properties.oversizedInGui:()Z
+        27: invokevirtual #115                // Method net/minecraft/client/renderer/item/ItemStackRenderState.setOversizedInGui:(Z)V
+        30: aload_0
+        31: aload         7
+        33: invokevirtual #116                // Method getItemModel:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ItemModel;
+        36: aload_1
+        37: aload_2
+        38: aload_0
+        39: aload_3
+        40: aload         4
+        42: instanceof    #118                // class net/minecraft/client/multiplayer/ClientLevel
+        45: ifeq          60
+        48: aload         4
+        50: checkcast     #118                // class net/minecraft/client/multiplayer/ClientLevel
+        53: astore        8
+        55: aload         8
+        57: goto          61
+        60: aconst_null
+        61: aload         5
+        63: iload         6
+        65: invokeinterface #128,  8          // InterfaceMethod net/minecraft/client/renderer/item/ItemModel.update:(Lnet/minecraft/client/renderer/item/ItemStackRenderState;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/client/renderer/item/ItemModelResolver;Lnet/minecraft/world/item/ItemDisplayContext;Lnet/minecraft/client/multiplayer/ClientLevel;Lnet/minecraft/world/entity/ItemOwner;I)V
+        70: return
+
+  public boolean shouldPlaySwapAnimation(net.minecraft.world.item.ItemStack);
+    Code:
+         0: aload_1
+         1: getstatic     #101                // Field net/minecraft/core/component/DataComponents.ITEM_MODEL:Lnet/minecraft/core/component/DataComponentType;
+         4: invokevirtual #105                // Method net/minecraft/world/item/ItemStack.get:(Lnet/minecraft/core/component/DataComponentType;)Ljava/lang/Object;
+         7: checkcast     #107                // class net/minecraft/resources/Identifier
+        10: astore_2
+        11: aload_2
+        12: ifnonnull     19
+        15: iconst_1
+        16: goto          27
+        19: aload_0
+        20: aload_2
+        21: invokevirtual #108                // Method getItemProperties:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ClientItem$Properties;
+        24: invokevirtual #136                // Method net/minecraft/client/renderer/item/ClientItem$Properties.handAnimationOnSwap:()Z
+        27: ireturn
+
+  public float swapAnimationScale(net.minecraft.world.item.ItemStack);
+    Code:
+         0: aload_1
+         1: getstatic     #101                // Field net/minecraft/core/component/DataComponents.ITEM_MODEL:Lnet/minecraft/core/component/DataComponentType;
+         4: invokevirtual #105                // Method net/minecraft/world/item/ItemStack.get:(Lnet/minecraft/core/component/DataComponentType;)Ljava/lang/Object;
+         7: checkcast     #107                // class net/minecraft/resources/Identifier
+        10: astore_2
+        11: aload_2
+        12: ifnonnull     19
+        15: fconst_1
+        16: goto          27
+        19: aload_0
+        20: aload_2
+        21: invokevirtual #108                // Method getItemProperties:(Lnet/minecraft/resources/Identifier;)Lnet/minecraft/client/renderer/item/ClientItem$Properties;
+        24: invokevirtual #141                // Method net/minecraft/client/renderer/item/ClientItem$Properties.swapAnimationScale:()F
+        27: freturn
+}

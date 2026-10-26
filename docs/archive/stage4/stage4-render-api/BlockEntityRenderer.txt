@@ -1,0 +1,36 @@
+Compiled from "BlockEntityRenderer.java"
+public interface net.minecraft.client.renderer.blockentity.BlockEntityRenderer<T extends net.minecraft.world.level.block.entity.BlockEntity, S extends net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState> extends net.neoforged.neoforge.client.extensions.IBlockEntityRendererExtension<T> {
+  public abstract S createRenderState();
+
+  public default void extractRenderState(T, S, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_1
+         1: aload_2
+         2: aload         5
+         4: invokestatic  #33                 // Method net/minecraft/client/renderer/blockentity/state/BlockEntityRenderState.extractBase:(Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+         7: return
+
+  public abstract void submit(S, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+
+  public default boolean shouldRenderOffScreen();
+    Code:
+         0: iconst_0
+         1: ireturn
+
+  public default int getViewDistance();
+    Code:
+         0: bipush        64
+         2: ireturn
+
+  public default boolean shouldRender(T, net.minecraft.world.phys.Vec3);
+    Code:
+         0: aload_1
+         1: invokevirtual #62                 // Method net/minecraft/world/level/block/entity/BlockEntity.getBlockPos:()Lnet/minecraft/core/BlockPos;
+         4: invokestatic  #68                 // Method net/minecraft/world/phys/Vec3.atCenterOf:(Lnet/minecraft/core/Vec3i;)Lnet/minecraft/world/phys/Vec3;
+         7: aload_2
+         8: aload_0
+         9: invokeinterface #70,  1           // InterfaceMethod getViewDistance:()I
+        14: i2d
+        15: invokevirtual #74                 // Method net/minecraft/world/phys/Vec3.closerThan:(Lnet/minecraft/core/Position;D)Z
+        18: ireturn
+}

@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:alchemytable",
+  "input": [
+    "#c:dusts/redstone",
+    "minecraft:white_dye",
+    "minecraft:gunpowder",
+    "#minecraft:coals"
+  ],
+  "output": {
+    "id": "bloodmagic:arcaneashes"
+  },
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1
+}

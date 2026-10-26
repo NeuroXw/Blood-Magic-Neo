@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "bloodmagic:weakbloodorb",
+    "bloodmagic:apprenticebloodorb",
+    "bloodmagic:magicianbloodorb",
+    "bloodmagic:masterbloodorb",
+    "bloodmagic:archmagebloodorb"
+  ]
+}

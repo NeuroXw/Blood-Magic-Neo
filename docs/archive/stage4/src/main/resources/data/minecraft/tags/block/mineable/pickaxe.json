@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "bloodmagic:blankrune",
+    "bloodmagic:speedrune",
+    "bloodmagic:sacrificerune",
+    "bloodmagic:selfsacrificerune",
+    "bloodmagic:dislocationrune",
+    "bloodmagic:altarcapacityrune",
+    "bloodmagic:bettercapacityrune",
+    "bloodmagic:orbcapacityrune",
+    "bloodmagic:accelerationrune",
+    "bloodmagic:chargingrune",
+    "bloodmagic:selfsacrificerune2",
+    "bloodmagic:speedrune2",
+    "bloodmagic:sacrificerune2",
+    "bloodmagic:dislocationrune2",
+    "bloodmagic:altarcapacityrune2",
+    "bloodmagic:bettercapacityrune2",
+    "bloodmagic:orbcapacityrune2",
+    "bloodmagic:accelerationrune2",
+    "bloodmagic:chargingrune2",
+    "bloodmagic:largebloodstonebrick",
+    "bloodmagic:bloodstonebrick",
+    "bloodmagic:altar",
+    "bloodmagic:dungeon_metal"
+  ]
+}

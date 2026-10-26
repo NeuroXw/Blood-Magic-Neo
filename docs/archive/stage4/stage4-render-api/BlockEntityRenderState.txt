@@ -1,0 +1,86 @@
+Compiled from "BlockEntityRenderState.java"
+public class net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState {
+  public net.minecraft.core.BlockPos blockPos;
+
+  private net.minecraft.world.level.block.state.BlockState blockState;
+
+  public net.minecraft.world.level.block.entity.BlockEntityType<?> blockEntityType;
+
+  public int lightCoords;
+
+  public net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay breakProgress;
+
+  public net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState();
+    Code:
+         0: aload_0
+         1: invokespecial #35                 // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: getstatic     #40                 // Field net/minecraft/core/BlockPos.ZERO:Lnet/minecraft/core/BlockPos;
+         8: putfield      #42                 // Field blockPos:Lnet/minecraft/core/BlockPos;
+        11: aload_0
+        12: getstatic     #48                 // Field net/minecraft/world/level/block/Blocks.AIR:Lnet/minecraft/world/level/block/Block;
+        15: invokevirtual #54                 // Method net/minecraft/world/level/block/Block.defaultBlockState:()Lnet/minecraft/world/level/block/state/BlockState;
+        18: putfield      #56                 // Field blockState:Lnet/minecraft/world/level/block/state/BlockState;
+        21: aload_0
+        22: getstatic     #61                 // Field net/minecraft/world/level/block/entity/BlockEntityType.TEST_BLOCK:Lnet/minecraft/world/level/block/entity/BlockEntityType;
+        25: putfield      #63                 // Field blockEntityType:Lnet/minecraft/world/level/block/entity/BlockEntityType;
+        28: return
+
+  public static void extractBase(net.minecraft.world.level.block.entity.BlockEntity, net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_1
+         1: aload_0
+         2: invokevirtual #75                 // Method net/minecraft/world/level/block/entity/BlockEntity.getBlockPos:()Lnet/minecraft/core/BlockPos;
+         5: putfield      #42                 // Field blockPos:Lnet/minecraft/core/BlockPos;
+         8: aload_1
+         9: aload_0
+        10: invokevirtual #78                 // Method net/minecraft/world/level/block/entity/BlockEntity.getBlockState:()Lnet/minecraft/world/level/block/state/BlockState;
+        13: putfield      #56                 // Field blockState:Lnet/minecraft/world/level/block/state/BlockState;
+        16: aload_1
+        17: aload_0
+        18: invokevirtual #82                 // Method net/minecraft/world/level/block/entity/BlockEntity.getType:()Lnet/minecraft/world/level/block/entity/BlockEntityType;
+        21: putfield      #63                 // Field blockEntityType:Lnet/minecraft/world/level/block/entity/BlockEntityType;
+        24: aload_1
+        25: aload_0
+        26: invokevirtual #86                 // Method net/minecraft/world/level/block/entity/BlockEntity.getLevel:()Lnet/minecraft/world/level/Level;
+        29: ifnull        46
+        32: aload_0
+        33: invokevirtual #86                 // Method net/minecraft/world/level/block/entity/BlockEntity.getLevel:()Lnet/minecraft/world/level/Level;
+        36: aload_0
+        37: invokevirtual #75                 // Method net/minecraft/world/level/block/entity/BlockEntity.getBlockPos:()Lnet/minecraft/core/BlockPos;
+        40: invokestatic  #92                 // Method net/minecraft/client/renderer/LevelRenderer.getLightCoords:(Lnet/minecraft/world/level/BlockAndLightGetter;Lnet/minecraft/core/BlockPos;)I
+        43: goto          48
+        46: ldc           #93                 // int 15728880
+        48: putfield      #95                 // Field lightCoords:I
+        51: aload_1
+        52: aload_2
+        53: putfield      #97                 // Field breakProgress:Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;
+        56: return
+
+  public void fillCrashReportCategory(net.minecraft.CrashReportCategory);
+    Code:
+         0: aload_1
+         1: ldc           #103                // String BlockEntityRenderState
+         3: aload_0
+         4: invokevirtual #107                // Method java/lang/Object.getClass:()Ljava/lang/Class;
+         7: invokevirtual #113                // Method java/lang/Class.getCanonicalName:()Ljava/lang/String;
+        10: invokevirtual #119                // Method net/minecraft/CrashReportCategory.setDetail:(Ljava/lang/String;Ljava/lang/Object;)Lnet/minecraft/CrashReportCategory;
+        13: pop
+        14: aload_1
+        15: ldc           #121                // String Position
+        17: aload_0
+        18: getfield      #42                 // Field blockPos:Lnet/minecraft/core/BlockPos;
+        21: invokevirtual #119                // Method net/minecraft/CrashReportCategory.setDetail:(Ljava/lang/String;Ljava/lang/Object;)Lnet/minecraft/CrashReportCategory;
+        24: pop
+        25: aload_1
+        26: ldc           #123                // String Block state
+        28: aload_0
+        29: getfield      #56                 // Field blockState:Lnet/minecraft/world/level/block/state/BlockState;
+        32: dup
+        33: invokestatic  #129                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        36: pop
+        37: invokedynamic #149,  0            // InvokeDynamic #0:call:(Lnet/minecraft/world/level/block/state/BlockState;)Lnet/minecraft/CrashReportDetail;
+        42: invokevirtual #152                // Method net/minecraft/CrashReportCategory.setDetail:(Ljava/lang/String;Lnet/minecraft/CrashReportDetail;)Lnet/minecraft/CrashReportCategory;
+        45: pop
+        46: return
+}

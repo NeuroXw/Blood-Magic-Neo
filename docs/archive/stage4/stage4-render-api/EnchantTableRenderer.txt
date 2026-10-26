@@ -1,0 +1,270 @@
+Compiled from "EnchantTableRenderer.java"
+public class net.minecraft.client.renderer.blockentity.EnchantTableRenderer implements net.minecraft.client.renderer.blockentity.BlockEntityRenderer<net.minecraft.world.level.block.entity.EnchantingTableBlockEntity, net.minecraft.client.renderer.blockentity.state.EnchantTableRenderState> {
+  public static final net.minecraft.client.resources.model.sprite.SpriteId BOOK_TEXTURE;
+
+  private final net.minecraft.client.resources.model.sprite.SpriteGetter sprites;
+
+  private final net.minecraft.client.model.object.book.BookModel bookModel;
+
+  public net.minecraft.client.renderer.blockentity.EnchantTableRenderer(net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider$Context);
+    Code:
+         0: aload_0
+         1: invokespecial #39                 // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: invokevirtual #42                 // Method net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context.sprites:()Lnet/minecraft/client/resources/model/sprite/SpriteGetter;
+         9: putfield      #44                 // Field sprites:Lnet/minecraft/client/resources/model/sprite/SpriteGetter;
+        12: aload_0
+        13: new           #26                 // class net/minecraft/client/model/object/book/BookModel
+        16: dup
+        17: aload_1
+        18: getstatic     #50                 // Field net/minecraft/client/model/geom/ModelLayers.BOOK:Lnet/minecraft/client/model/geom/ModelLayerLocation;
+        21: invokevirtual #54                 // Method net/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context.bakeLayer:(Lnet/minecraft/client/model/geom/ModelLayerLocation;)Lnet/minecraft/client/model/geom/ModelPart;
+        24: invokespecial #57                 // Method net/minecraft/client/model/object/book/BookModel."<init>":(Lnet/minecraft/client/model/geom/ModelPart;)V
+        27: putfield      #59                 // Field bookModel:Lnet/minecraft/client/model/object/book/BookModel;
+        30: return
+
+  public net.minecraft.client.renderer.blockentity.state.EnchantTableRenderState createRenderState();
+    Code:
+         0: new           #66                 // class net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState
+         3: dup
+         4: invokespecial #67                 // Method net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState."<init>":()V
+         7: areturn
+
+  public void extractRenderState(net.minecraft.world.level.block.entity.EnchantingTableBlockEntity, net.minecraft.client.renderer.blockentity.state.EnchantTableRenderState, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: fload_3
+         4: aload         4
+         6: aload         5
+         8: invokespecial #78                 // InterfaceMethod net/minecraft/client/renderer/blockentity/BlockEntityRenderer.extractRenderState:(Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/client/renderer/blockentity/state/BlockEntityRenderState;FLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+        11: aload_2
+        12: fload_3
+        13: aload_1
+        14: getfield      #84                 // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.oFlip:F
+        17: aload_1
+        18: getfield      #87                 // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.flip:F
+        21: invokestatic  #93                 // Method net/minecraft/util/Mth.lerp:(FFF)F
+        24: putfield      #94                 // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.flip:F
+        27: aload_2
+        28: fload_3
+        29: aload_1
+        30: getfield      #97                 // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.oOpen:F
+        33: aload_1
+        34: getfield      #100                // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.open:F
+        37: invokestatic  #93                 // Method net/minecraft/util/Mth.lerp:(FFF)F
+        40: putfield      #101                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.open:F
+        43: aload_2
+        44: aload_1
+        45: getfield      #105                // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.time:I
+        48: i2f
+        49: fload_3
+        50: fadd
+        51: putfield      #107                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.time:F
+        54: aload_1
+        55: getfield      #110                // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.rot:F
+        58: aload_1
+        59: getfield      #113                // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.oRot:F
+        62: fsub
+        63: fstore        6
+        65: fload         6
+        67: ldc           #114                // float 3.1415927f
+        69: fcmpl
+        70: iflt          83
+        73: fload         6
+        75: ldc           #115                // float 6.2831855f
+        77: fsub
+        78: fstore        6
+        80: goto          65
+        83: fload         6
+        85: ldc           #116                // float -3.1415927f
+        87: fcmpg
+        88: ifge          101
+        91: fload         6
+        93: ldc           #115                // float 6.2831855f
+        95: fadd
+        96: fstore        6
+        98: goto          83
+       101: aload_2
+       102: aload_1
+       103: getfield      #113                // Field net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.oRot:F
+       106: fload         6
+       108: fload_3
+       109: fmul
+       110: fadd
+       111: putfield      #119                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.yRot:F
+       114: return
+
+  public void submit(net.minecraft.client.renderer.blockentity.state.EnchantTableRenderState, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+    Code:
+         0: aload_2
+         1: invokevirtual #134                // Method com/mojang/blaze3d/vertex/PoseStack.pushPose:()V
+         4: aload_2
+         5: ldc           #135                // float 0.5f
+         7: ldc           #136                // float 0.75f
+         9: ldc           #135                // float 0.5f
+        11: invokevirtual #140                // Method com/mojang/blaze3d/vertex/PoseStack.translate:(FFF)V
+        14: aload_2
+        15: fconst_0
+        16: ldc           #141                // float 0.1f
+        18: aload_1
+        19: getfield      #107                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.time:F
+        22: ldc           #141                // float 0.1f
+        24: fmul
+        25: f2d
+        26: invokestatic  #145                // Method net/minecraft/util/Mth.sin:(D)F
+        29: ldc           #146                // float 0.01f
+        31: fmul
+        32: fadd
+        33: fconst_0
+        34: invokevirtual #140                // Method com/mojang/blaze3d/vertex/PoseStack.translate:(FFF)V
+        37: aload_1
+        38: getfield      #119                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.yRot:F
+        41: fstore        5
+        43: aload_2
+        44: getstatic     #152                // Field com/mojang/math/Axis.YP:Lcom/mojang/math/Axis;
+        47: fload         5
+        49: fneg
+        50: invokeinterface #156,  2          // InterfaceMethod com/mojang/math/Axis.rotation:(F)Lorg/joml/Quaternionf;
+        55: invokevirtual #160                // Method com/mojang/blaze3d/vertex/PoseStack.mulPose:(Lorg/joml/Quaternionfc;)V
+        58: aload_2
+        59: getstatic     #163                // Field com/mojang/math/Axis.ZP:Lcom/mojang/math/Axis;
+        62: ldc           #164                // float 80.0f
+        64: invokeinterface #167,  2          // InterfaceMethod com/mojang/math/Axis.rotationDegrees:(F)Lorg/joml/Quaternionf;
+        69: invokevirtual #160                // Method com/mojang/blaze3d/vertex/PoseStack.mulPose:(Lorg/joml/Quaternionfc;)V
+        72: aload_1
+        73: getfield      #94                 // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.flip:F
+        76: ldc           #168                // float 0.25f
+        78: fadd
+        79: invokestatic  #172                // Method net/minecraft/util/Mth.frac:(F)F
+        82: ldc           #173                // float 1.6f
+        84: fmul
+        85: ldc           #174                // float 0.3f
+        87: fsub
+        88: fstore        6
+        90: aload_1
+        91: getfield      #94                 // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.flip:F
+        94: ldc           #136                // float 0.75f
+        96: fadd
+        97: invokestatic  #172                // Method net/minecraft/util/Mth.frac:(F)F
+       100: ldc           #173                // float 1.6f
+       102: fmul
+       103: ldc           #174                // float 0.3f
+       105: fsub
+       106: fstore        7
+       108: aload_1
+       109: getfield      #107                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.time:F
+       112: fload         6
+       114: fconst_0
+       115: fconst_1
+       116: invokestatic  #177                // Method net/minecraft/util/Mth.clamp:(FFF)F
+       119: fload         7
+       121: fconst_0
+       122: fconst_1
+       123: invokestatic  #177                // Method net/minecraft/util/Mth.clamp:(FFF)F
+       126: aload_1
+       127: getfield      #101                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.open:F
+       130: invokestatic  #181                // Method net/minecraft/client/model/object/book/BookModel$State.forAnimation:(FFFF)Lnet/minecraft/client/model/object/book/BookModel$State;
+       133: astore        8
+       135: aload_3
+       136: aload_0
+       137: getfield      #59                 // Field bookModel:Lnet/minecraft/client/model/object/book/BookModel;
+       140: aload         8
+       142: aload_2
+       143: aload_1
+       144: getfield      #184                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.lightCoords:I
+       147: getstatic     #189                // Field net/minecraft/client/renderer/texture/OverlayTexture.NO_OVERLAY:I
+       150: iconst_m1
+       151: getstatic     #191                // Field BOOK_TEXTURE:Lnet/minecraft/client/resources/model/sprite/SpriteId;
+       154: aload_0
+       155: getfield      #44                 // Field sprites:Lnet/minecraft/client/resources/model/sprite/SpriteGetter;
+       158: iconst_0
+       159: aload_1
+       160: getfield      #193                // Field net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState.breakProgress:Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;
+       163: invokeinterface #199,  11         // InterfaceMethod net/minecraft/client/renderer/SubmitNodeCollector.submitModel:(Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;IIILnet/minecraft/client/resources/model/sprite/SpriteId;Lnet/minecraft/client/resources/model/sprite/SpriteGetter;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+       168: aload_2
+       169: invokevirtual #202                // Method com/mojang/blaze3d/vertex/PoseStack.popPose:()V
+       172: return
+
+  public net.minecraft.world.phys.AABB getRenderBoundingBox(net.minecraft.world.level.block.entity.EnchantingTableBlockEntity);
+    Code:
+         0: aload_1
+         1: invokevirtual #248                // Method net/minecraft/world/level/block/entity/EnchantingTableBlockEntity.getBlockPos:()Lnet/minecraft/core/BlockPos;
+         4: astore_2
+         5: new           #250                // class net/minecraft/world/phys/AABB
+         8: dup
+         9: aload_2
+        10: invokevirtual #256                // Method net/minecraft/core/BlockPos.getX:()I
+        13: i2d
+        14: aload_2
+        15: invokevirtual #259                // Method net/minecraft/core/BlockPos.getY:()I
+        18: i2d
+        19: aload_2
+        20: invokevirtual #262                // Method net/minecraft/core/BlockPos.getZ:()I
+        23: i2d
+        24: aload_2
+        25: invokevirtual #256                // Method net/minecraft/core/BlockPos.getX:()I
+        28: i2d
+        29: dconst_1
+        30: dadd
+        31: aload_2
+        32: invokevirtual #259                // Method net/minecraft/core/BlockPos.getY:()I
+        35: i2d
+        36: ldc2_w        #263                // double 1.5d
+        39: dadd
+        40: aload_2
+        41: invokevirtual #262                // Method net/minecraft/core/BlockPos.getZ:()I
+        44: i2d
+        45: dconst_1
+        46: dadd
+        47: invokespecial #267                // Method net/minecraft/world/phys/AABB."<init>":(DDDDDD)V
+        50: areturn
+
+  public void submit(net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState, com.mojang.blaze3d.vertex.PoseStack, net.minecraft.client.renderer.SubmitNodeCollector, net.minecraft.client.renderer.state.level.CameraRenderState);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #66                 // class net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState
+         5: aload_2
+         6: aload_3
+         7: aload         4
+         9: invokevirtual #212                // Method submit:(Lnet/minecraft/client/renderer/blockentity/state/EnchantTableRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V
+        12: return
+
+  public void extractRenderState(net.minecraft.world.level.block.entity.BlockEntity, net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState, float, net.minecraft.world.phys.Vec3, net.minecraft.client.renderer.feature.ModelFeatureRenderer$CrumblingOverlay);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #80                 // class net/minecraft/world/level/block/entity/EnchantingTableBlockEntity
+         5: aload_2
+         6: checkcast     #66                 // class net/minecraft/client/renderer/blockentity/state/EnchantTableRenderState
+         9: fload_3
+        10: aload         4
+        12: aload         5
+        14: invokevirtual #214                // Method extractRenderState:(Lnet/minecraft/world/level/block/entity/EnchantingTableBlockEntity;Lnet/minecraft/client/renderer/blockentity/state/EnchantTableRenderState;FLnet/minecraft/world/phys/Vec3;Lnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V
+        17: return
+
+  public net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState createRenderState();
+    Code:
+         0: aload_0
+         1: invokevirtual #217                // Method createRenderState:()Lnet/minecraft/client/renderer/blockentity/state/EnchantTableRenderState;
+         4: areturn
+
+  public net.minecraft.world.phys.AABB getRenderBoundingBox(net.minecraft.world.level.block.entity.BlockEntity);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: checkcast     #80                 // class net/minecraft/world/level/block/entity/EnchantingTableBlockEntity
+         5: invokevirtual #272                // Method getRenderBoundingBox:(Lnet/minecraft/world/level/block/entity/EnchantingTableBlockEntity;)Lnet/minecraft/world/phys/AABB;
+         8: areturn
+
+  static {};
+    Code:
+         0: getstatic     #224                // Field net/minecraft/client/renderer/Sheets.BLOCK_ENTITIES_MAPPER:Lnet/minecraft/client/renderer/SpriteMapper;
+         3: ldc           #226                // String enchantment/enchanting_table_book
+         5: invokevirtual #232                // Method net/minecraft/client/renderer/SpriteMapper.defaultNamespaceApply:(Ljava/lang/String;)Lnet/minecraft/client/resources/model/sprite/SpriteId;
+         8: putstatic     #191                // Field BOOK_TEXTURE:Lnet/minecraft/client/resources/model/sprite/SpriteId;
+        11: return
+}

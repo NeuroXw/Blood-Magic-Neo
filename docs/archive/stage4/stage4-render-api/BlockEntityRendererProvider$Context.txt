@@ -1,0 +1,123 @@
+Compiled from "BlockEntityRendererProvider.java"
+public final class net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider$Context extends java.lang.Record {
+  private final net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher blockEntityRenderDispatcher;
+
+  private final net.minecraft.client.renderer.block.BlockModelResolver blockModelResolver;
+
+  private final net.minecraft.client.renderer.item.ItemModelResolver itemModelResolver;
+
+  private final net.minecraft.client.renderer.entity.EntityRenderDispatcher entityRenderer;
+
+  private final net.minecraft.client.model.geom.EntityModelSet entityModelSet;
+
+  private final net.minecraft.client.gui.Font font;
+
+  private final net.minecraft.client.resources.model.sprite.SpriteGetter sprites;
+
+  private final net.minecraft.client.renderer.PlayerSkinRenderCache playerSkinRenderCache;
+
+  public net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider$Context(net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher, net.minecraft.client.renderer.block.BlockModelResolver, net.minecraft.client.renderer.item.ItemModelResolver, net.minecraft.client.renderer.entity.EntityRenderDispatcher, net.minecraft.client.model.geom.EntityModelSet, net.minecraft.client.gui.Font, net.minecraft.client.resources.model.sprite.SpriteGetter, net.minecraft.client.renderer.PlayerSkinRenderCache);
+    Code:
+         0: aload_0
+         1: invokespecial #38                 // Method java/lang/Record."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: putfield      #40                 // Field blockEntityRenderDispatcher:Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher;
+         9: aload_0
+        10: aload_2
+        11: putfield      #42                 // Field blockModelResolver:Lnet/minecraft/client/renderer/block/BlockModelResolver;
+        14: aload_0
+        15: aload_3
+        16: putfield      #44                 // Field itemModelResolver:Lnet/minecraft/client/renderer/item/ItemModelResolver;
+        19: aload_0
+        20: aload         4
+        22: putfield      #46                 // Field entityRenderer:Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;
+        25: aload_0
+        26: aload         5
+        28: putfield      #48                 // Field entityModelSet:Lnet/minecraft/client/model/geom/EntityModelSet;
+        31: aload_0
+        32: aload         6
+        34: putfield      #50                 // Field font:Lnet/minecraft/client/gui/Font;
+        37: aload_0
+        38: aload         7
+        40: putfield      #52                 // Field sprites:Lnet/minecraft/client/resources/model/sprite/SpriteGetter;
+        43: aload_0
+        44: aload         8
+        46: putfield      #54                 // Field playerSkinRenderCache:Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+        49: return
+
+  public net.minecraft.client.model.geom.ModelPart bakeLayer(net.minecraft.client.model.geom.ModelLayerLocation);
+    Code:
+         0: aload_0
+         1: getfield      #48                 // Field entityModelSet:Lnet/minecraft/client/model/geom/EntityModelSet;
+         4: aload_1
+         5: invokevirtual #63                 // Method net/minecraft/client/model/geom/EntityModelSet.bakeLayer:(Lnet/minecraft/client/model/geom/ModelLayerLocation;)Lnet/minecraft/client/model/geom/ModelPart;
+         8: areturn
+
+  public final java.lang.String toString();
+    Code:
+         0: aload_0
+         1: invokedynamic #86,  0             // InvokeDynamic #0:toString:(Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)Ljava/lang/String;
+         6: areturn
+
+  public final int hashCode();
+    Code:
+         0: aload_0
+         1: invokedynamic #91,  0             // InvokeDynamic #0:hashCode:(Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;)I
+         6: ireturn
+
+  public final boolean equals(java.lang.Object);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: invokedynamic #97,  0             // InvokeDynamic #0:equals:(Lnet/minecraft/client/renderer/blockentity/BlockEntityRendererProvider$Context;Ljava/lang/Object;)Z
+         7: ireturn
+
+  public net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher blockEntityRenderDispatcher();
+    Code:
+         0: aload_0
+         1: getfield      #40                 // Field blockEntityRenderDispatcher:Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher;
+         4: areturn
+
+  public net.minecraft.client.renderer.block.BlockModelResolver blockModelResolver();
+    Code:
+         0: aload_0
+         1: getfield      #42                 // Field blockModelResolver:Lnet/minecraft/client/renderer/block/BlockModelResolver;
+         4: areturn
+
+  public net.minecraft.client.renderer.item.ItemModelResolver itemModelResolver();
+    Code:
+         0: aload_0
+         1: getfield      #44                 // Field itemModelResolver:Lnet/minecraft/client/renderer/item/ItemModelResolver;
+         4: areturn
+
+  public net.minecraft.client.renderer.entity.EntityRenderDispatcher entityRenderer();
+    Code:
+         0: aload_0
+         1: getfield      #46                 // Field entityRenderer:Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;
+         4: areturn
+
+  public net.minecraft.client.model.geom.EntityModelSet entityModelSet();
+    Code:
+         0: aload_0
+         1: getfield      #48                 // Field entityModelSet:Lnet/minecraft/client/model/geom/EntityModelSet;
+         4: areturn
+
+  public net.minecraft.client.gui.Font font();
+    Code:
+         0: aload_0
+         1: getfield      #50                 // Field font:Lnet/minecraft/client/gui/Font;
+         4: areturn
+
+  public net.minecraft.client.resources.model.sprite.SpriteGetter sprites();
+    Code:
+         0: aload_0
+         1: getfield      #52                 // Field sprites:Lnet/minecraft/client/resources/model/sprite/SpriteGetter;
+         4: areturn
+
+  public net.minecraft.client.renderer.PlayerSkinRenderCache playerSkinRenderCache();
+    Code:
+         0: aload_0
+         1: getfield      #54                 // Field playerSkinRenderCache:Lnet/minecraft/client/renderer/PlayerSkinRenderCache;
+         4: areturn
+}

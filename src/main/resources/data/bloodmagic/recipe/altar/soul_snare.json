@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 500,
+  "consumptionRate": 5,
+  "drainRate": 1,
+  "input": "minecraft:string",
+  "output": {
+    "id": "bloodmagic:soulsnare"
+  },
+  "upgradeLevel": 0
+}

@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 40000,
+  "consumptionRate": 30,
+  "drainRate": 50,
+  "input": "bloodmagic:weakbloodshard",
+  "output": {
+    "id": "bloodmagic:masterbloodorb",
+    "count": 1
+  },
+  "upgradeLevel": 3
+}

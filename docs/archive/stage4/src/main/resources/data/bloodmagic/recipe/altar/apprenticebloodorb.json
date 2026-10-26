@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 5000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": "#c:storage_blocks/redstone",
+  "output": {
+    "id": "bloodmagic:apprenticebloodorb",
+    "count": 1
+  },
+  "upgradeLevel": 1
+}

@@ -1,0 +1,9 @@
+{
+  "type": "bloodmagic:array",
+  "addedinput": "bloodmagic:blankslate",
+  "baseinput": "bloodmagic:reagentlava",
+  "output": {
+    "id": "bloodmagic:lavasigil"
+  },
+  "texture": "bloodmagic:textures/models/alchemyarrays/lavasigil.png"
+}

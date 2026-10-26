@@ -1,0 +1,6 @@
+Compiled from "EntityRenderersEvent.java"
+public class net.neoforged.neoforge.client.event.EntityRenderersEvent$RegisterRenderers extends net.neoforged.neoforge.client.event.EntityRenderersEvent {
+  public net.neoforged.neoforge.client.event.EntityRenderersEvent$RegisterRenderers();
+  public <T extends net.minecraft.world.entity.Entity> void registerEntityRenderer(net.minecraft.world.entity.EntityType<? extends T>, net.minecraft.client.renderer.entity.EntityRendererProvider<T>);
+  public <T extends net.minecraft.world.level.block.entity.BlockEntity, S extends net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState> void registerBlockEntityRenderer(net.minecraft.world.level.block.entity.BlockEntityType<? extends T>, net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider<T, S>);
+}

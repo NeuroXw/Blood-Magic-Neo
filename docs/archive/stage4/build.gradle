@@ -1,0 +1,120 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = 'bloodmagic-neoforge'
+}
+
+// Official 26.1.2 MDK uses Java 25 and ModDevGradle; no mapping layer is added.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+// Opt-in integration checks run inside the real dedicated server, never in the release JAR.
+def stage4SmokeEnabled = providers.gradleProperty('stage4Smoke').map { it.toBoolean() }.getOrElse(false)
+sourceSets {
+    stage4Smoke {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+// MDG 2.0.148's asset helper otherwise requests a separate Java 21 toolchain.
+// Its public javaExecutable property is verified in the released plugin JAR.
+tasks.withType(net.neoforged.nfrtgradle.DownloadAssets).configureEach {
+    javaExecutable = javaToolchains.launcherFor(java.toolchain).map {
+        it.executablePath.asFile.absolutePath
+    }
+}
+
+neoForge {
+    // Official MDG binary pipeline avoids a full Minecraft decompile/recompile.
+    // Opt in to sources with -Pgenerate_minecraft_sources=true when needed.
+    enable {
+        version = project.neo_version
+        disableRecompilation = !project.generate_minecraft_sources.toBoolean()
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            jvmArgument '-Xmx1G'
+            jvmArgument '-XX:ActiveProcessorCount=2'
+            if (stage4SmokeEnabled) {
+                gameDirectory = file('run/stage4-smoke')
+            }
+        }
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+            if (stage4SmokeEnabled) {
+                sourceSet(sourceSets.stage4Smoke)
+            }
+        }
+    }
+}
+
+neoForge.addModdingDependenciesTo(sourceSets.stage4Smoke)
+
+tasks.named('runServer', JavaExec).configure {
+    standardInput = System.in
+    if (stage4SmokeEnabled) {
+        def resultFile = layout.projectDirectory.file('run/stage4-smoke/stage4-smoke-result.txt').asFile
+        doFirst {
+            if (resultFile.exists() && !resultFile.delete()) {
+                throw new GradleException('Cannot clear previous stage 4 smoke result')
+            }
+        }
+        doLast {
+            // Minecraft can exit with code 0 even after a server-thread crash.
+            if (!resultFile.isFile() || !resultFile.text.startsWith('STAGE4_SMOKE PASS:')) {
+                throw new GradleException('Stage 4 smoke checks did not pass; inspect the server log')
+            }
+        }
+    }
+}
+
+// Keep the metadata at the requested resources path, expanding it at build time.
+def modMetadata = [
+        mod_id: mod_id,
+        mod_name: mod_name,
+        mod_license: mod_license,
+        mod_version: mod_version,
+        neo_version: neo_version,
+        minecraft_version_range: minecraft_version_range
+]
+
+tasks.named('processResources', ProcessResources).configure {
+    inputs.properties modMetadata
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand modMetadata
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-Xlint:deprecation')
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+tasks.named('jar', Jar).configure {
+    from(files('LICENSE.md', 'NOTICE.md', 'TEMPLATE_LICENSE.txt')) {
+        into 'META-INF'
+    }
+}
+

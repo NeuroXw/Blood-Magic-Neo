@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:alchemytable",
+  "input": [
+    "#c:dusts/glowstone",
+    "minecraft:glass",
+    "minecraft:glass",
+    "bloodmagic:divinationsigil"
+  ],
+  "output": {
+    "id": "bloodmagic:reagentsight"
+  },
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1
+}

@@ -1,0 +1,143 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = 'BloodMagicNeo'
+}
+
+// Official 26.1.2 MDK uses Java 25 and ModDevGradle; no mapping layer is added.
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+// Opt-in integration checks run inside the real dedicated server, never in the release JAR.
+if (providers.gradleProperty('stage4Smoke').isPresent()) {
+    throw new GradleException('Stage 4 is archived in docs/archive/stage4. Use -Pstage6Smoke=true for the current suite.')
+}
+def stage5SmokeEnabled = providers.gradleProperty('stage5Smoke').map { it.toBoolean() }.getOrElse(false)
+def stage6SmokeEnabled = providers.gradleProperty('stage6Smoke').map { it.toBoolean() }.getOrElse(false)
+if (stage5SmokeEnabled) throw new GradleException('The stage 5 source is retained as history; use -Pstage6Smoke=true for its regression checks plus the new machines.')
+if (stage5SmokeEnabled && stage6SmokeEnabled) throw new GradleException('Choose only one smoke suite')
+sourceSets {
+    stage5Smoke {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+    stage6Smoke {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+// MDG 2.0.148's asset helper otherwise requests a separate Java 21 toolchain.
+// Its public javaExecutable property is verified in the released plugin JAR.
+tasks.withType(net.neoforged.nfrtgradle.DownloadAssets).configureEach {
+    javaExecutable = javaToolchains.launcherFor(java.toolchain).map {
+        it.executablePath.asFile.absolutePath
+    }
+}
+
+neoForge {
+    // Official MDG binary pipeline avoids a full Minecraft decompile/recompile.
+    // Opt in to sources with -Pgenerate_minecraft_sources=true when needed.
+    enable {
+        version = project.neo_version
+        disableRecompilation = !project.generate_minecraft_sources.toBoolean()
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            jvmArgument '-Xmx1G'
+            jvmArgument '-XX:ActiveProcessorCount=2'
+            if (stage5SmokeEnabled) {
+                gameDirectory = file('run/stage5-smoke')
+            }
+            if (stage6SmokeEnabled) gameDirectory = file('run/stage6-smoke')
+        }
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+            if (stage5SmokeEnabled) {
+                sourceSet(sourceSets.stage5Smoke)
+            }
+            if (stage6SmokeEnabled) sourceSet(sourceSets.stage6Smoke)
+        }
+    }
+}
+
+neoForge.addModdingDependenciesTo(sourceSets.stage5Smoke)
+neoForge.addModdingDependenciesTo(sourceSets.stage6Smoke)
+
+tasks.named('runServer', JavaExec).configure {
+    standardInput = System.in
+    if (stage6SmokeEnabled) {
+        def resultFile = layout.projectDirectory.file('run/stage6-smoke/stage6-smoke-result.txt').asFile
+        doFirst {
+            if (resultFile.exists() && !resultFile.delete()) throw new GradleException('Cannot clear previous stage 6 result')
+        }
+        doLast {
+            if (!resultFile.isFile() || !resultFile.text.startsWith('STAGE6_SMOKE PASS:'))
+                throw new GradleException('Stage 6 checks did not pass; inspect the server log')
+        }
+    }
+    if (stage5SmokeEnabled) {
+        def resultFile = layout.projectDirectory.file('run/stage5-smoke/stage5-smoke-result.txt').asFile
+        doFirst {
+            if (resultFile.exists() && !resultFile.delete()) {
+                throw new GradleException('Cannot clear previous stage 5 smoke result')
+            }
+        }
+        doLast {
+            // Minecraft can exit with code 0 even after a server-thread crash.
+            if (!resultFile.isFile() || !resultFile.text.startsWith('STAGE5_SMOKE PASS:')) {
+                throw new GradleException('Stage 5 smoke checks did not pass; inspect the server log')
+            }
+        }
+    }
+}
+
+// Keep the metadata at the requested resources path, expanding it at build time.
+def modMetadata = [
+        mod_id: mod_id,
+        mod_name: mod_name,
+        mod_license: mod_license,
+        mod_version: mod_version,
+        neo_version: neo_version,
+        minecraft_version_range: minecraft_version_range
+]
+
+tasks.named('processResources', ProcessResources).configure {
+    inputs.properties modMetadata
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand modMetadata
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-Xlint:deprecation')
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+tasks.named('jar', Jar).configure {
+    from(files('LICENSE.md', 'NOTICE.md', 'TEMPLATE_LICENSE.txt')) {
+        into 'META-INF'
+    }
+}
+

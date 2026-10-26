@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 1000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": "#c:stones",
+  "output": {
+    "id": "bloodmagic:blankslate",
+    "count": 1
+  },
+  "upgradeLevel": 0
+}
