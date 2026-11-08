@@ -1,0 +1,63 @@
+package wayoftime.bloodmagic.common.registries;
+
+import com.mojang.serialization.Codec;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import wayoftime.bloodmagic.BloodMagic;
+import wayoftime.bloodmagic.core.data.Binding;
+
+public final class BloodMagicDataComponents {
+    public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENTS =
+            DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, BloodMagic.MODID);
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> BLOOD_ORB_TIER =
+            DATA_COMPONENTS.register("blood_orb_tier", () -> DataComponentType.<Integer>builder()
+                    .persistent(Codec.intRange(1, 5))
+                    .networkSynchronized(ByteBufCodecs.VAR_INT.map(
+                            BloodMagicDataComponents::validateOrbTier, BloodMagicDataComponents::validateOrbTier))
+                    .build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Binding>> BINDING =
+            DATA_COMPONENTS.register("binding", () -> DataComponentType.<Binding>builder()
+                    .persistent(Binding.CODEC).networkSynchronized(Binding.STREAM_CODEC).build());
+
+    private BloodMagicDataComponents() {
+    }
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<wayoftime.bloodmagic.will.DemonWill>> DEMON_WILL = DATA_COMPONENTS.register("demon_will",
+            () -> DataComponentType.<wayoftime.bloodmagic.will.DemonWill>builder().persistent(wayoftime.bloodmagic.will.DemonWill.CODEC).networkSynchronized(wayoftime.bloodmagic.will.DemonWill.STREAM_CODEC).build());
+    public static final DeferredHolder<DataComponentType<?>,DataComponentType<Integer>> RITUAL_SELECTION=DATA_COMPONENTS.register("ritual_selection",()->DataComponentType.<Integer>builder().persistent(Codec.intRange(0,31)).networkSynchronized(ByteBufCodecs.VAR_INT).build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<wayoftime.bloodmagic.api.compat.EnumDemonWillType>> WILL_TYPE = DATA_COMPONENTS.register("will_type",
+            () -> DataComponentType.<wayoftime.bloodmagic.api.compat.EnumDemonWillType>builder().persistent(wayoftime.bloodmagic.api.compat.EnumDemonWillType.CODEC).networkSynchronized(wayoftime.bloodmagic.api.compat.EnumDemonWillType.STREAM_CODEC).build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SIGIL_ACTIVATED = DATA_COMPONENTS.register("sigil_activated",
+            () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(net.minecraft.network.codec.ByteBufCodecs.BOOL).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> TELEPOS_POS = DATA_COMPONENTS.register("telepos_pos",
+            () -> DataComponentType.<BlockPos>builder().persistent(BlockPos.CODEC).networkSynchronized(BlockPos.STREAM_CODEC).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceKey<Level>>> TELEPOS_DIMENSION = DATA_COMPONENTS.register("telepos_dimension",
+            () -> DataComponentType.<ResourceKey<Level>>builder().persistent(ResourceKey.codec(Registries.DIMENSION)).networkSynchronized(ResourceKey.streamCodec(Registries.DIMENSION)).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> SIGIL_SLOT = DATA_COMPONENTS.register("sigil_slot",
+            () -> DataComponentType.<Integer>builder().persistent(Codec.intRange(0, 4)).networkSynchronized(ByteBufCodecs.VAR_INT).build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> FLASK_FILLED = DATA_COMPONENTS.register("flask_filled", () -> DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).build());
+    public static int validateOrbTier(int tier) {
+        if (tier < 1 || tier > 5) {
+            throw new IllegalArgumentException("Blood orb tier must be between 1 and 5");
+        }
+        return tier;
+    }
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> RITUAL_READER_STATE = DATA_COMPONENTS.register("ritual_reader_state",
+            () -> DataComponentType.<Integer>builder().persistent(Codec.intRange(0, 2)).networkSynchronized(ByteBufCodecs.VAR_INT).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> RITUAL_READER_MASTER = DATA_COMPONENTS.register("ritual_reader_master",
+            () -> DataComponentType.<BlockPos>builder().persistent(BlockPos.CODEC).networkSynchronized(BlockPos.STREAM_CODEC).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> RITUAL_READER_FIRST = DATA_COMPONENTS.register("ritual_reader_first",
+            () -> DataComponentType.<BlockPos>builder().persistent(BlockPos.CODEC).networkSynchronized(BlockPos.STREAM_CODEC).build());
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> RITUAL_READER_RANGE = DATA_COMPONENTS.register("ritual_reader_range",
+            () -> DataComponentType.<String>builder().persistent(Codec.STRING).networkSynchronized(ByteBufCodecs.STRING_UTF8).build());
+
+}

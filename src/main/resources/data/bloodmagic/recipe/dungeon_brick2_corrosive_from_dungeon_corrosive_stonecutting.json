@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "#bloodmagic:dungeon_corrosive",
+  "result": "bloodmagic:dungeon_brick2_corrosive"
+}

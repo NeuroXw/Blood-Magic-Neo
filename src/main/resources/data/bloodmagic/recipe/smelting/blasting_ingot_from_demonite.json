@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.0,
+  "ingredient": "bloodmagic:dungeon_ore",
+  "result": "bloodmagic:ingot_hellforged"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "bloodmagic:sand_hellforged"
+      },
+      "chance": 0.17,
+      "mainchance": 0.33
+    }
+  ],
+  "consumeingredient": false,
+  "input": "bloodmagic:rawdemonite",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:sand_hellforged"
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "bloodmagic:block/crystal6",
+  "textures": {
+    "crystal": "bloodmagic:block/defaultcrystal",
+    "particle": "bloodmagic:block/defaultcrystal"
+  }
+}

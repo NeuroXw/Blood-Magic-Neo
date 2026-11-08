@@ -1,0 +1,13 @@
+{
+  "type": "bloodmagic:flask_potioneffect",
+  "baseDuration": 900,
+  "effect": "minecraft:poison",
+  "input": [
+    "bloodmagic:simplecatalyst",
+    "minecraft:spider_eye"
+  ],
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "effect"
+}

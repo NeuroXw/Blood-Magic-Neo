@@ -1,0 +1,7 @@
+{
+  "parent": "bloodmagic:block/crystal4",
+  "textures": {
+    "crystal": "bloodmagic:block/corrosivecrystal",
+    "particle": "bloodmagic:block/corrosivecrystal"
+  }
+}

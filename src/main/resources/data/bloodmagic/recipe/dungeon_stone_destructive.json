@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "bloodmagic:destructivecrystal",
+    "s": "minecraft:stone"
+  },
+  "pattern": [
+    "sss",
+    "scs",
+    "sss"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_destructive",
+    "count": 64
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "bloodmagic:block/crystal6",
+  "textures": {
+    "crystal": "bloodmagic:block/vengefulcrystal",
+    "particle": "bloodmagic:block/vengefulcrystal"
+  }
+}

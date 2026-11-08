@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "bloodmagic:dungeon_stone_vengeful"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_wall_vengeful",
+    "count": 6
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "minecraft:gold_ingot",
+        "count": 4
+      },
+      "chance": 0.0,
+      "mainchance": 1.0
+    }
+  ],
+  "consumeingredient": false,
+  "input": "minecraft:netherite_ingot",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "minecraft:netherite_scrap",
+    "count": 4
+  },
+  "tool": "#bloodmagic:arc/reverter"
+}

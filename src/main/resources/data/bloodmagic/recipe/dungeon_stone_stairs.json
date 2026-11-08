@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "bloodmagic:dungeon_stone"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_stairs",
+    "count": 4
+  },
+  "show_notification": true
+}

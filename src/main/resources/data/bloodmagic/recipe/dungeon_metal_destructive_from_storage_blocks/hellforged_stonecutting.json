@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "#c:storage_blocks/hellforged",
+  "result": "bloodmagic:dungeon_metal_destructive"
+}

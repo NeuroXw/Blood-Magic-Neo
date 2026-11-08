@@ -1,0 +1,13 @@
+{
+  "type": "bloodmagic:flask_potioneffect",
+  "baseDuration": 3600,
+  "effect": "minecraft:speed",
+  "input": [
+    "bloodmagic:simplecatalyst",
+    "minecraft:sugar"
+  ],
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "effect"
+}

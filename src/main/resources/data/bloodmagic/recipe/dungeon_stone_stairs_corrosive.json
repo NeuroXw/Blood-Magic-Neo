@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "bloodmagic:dungeon_stone_corrosive"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_stairs_corrosive",
+    "count": 4
+  },
+  "show_notification": true
+}

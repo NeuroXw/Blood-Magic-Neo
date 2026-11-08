@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "minecraft:glass",
+  "inputFluid": {
+    "amount": 333,
+    "fluid": "minecraft:water"
+  },
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "minecraft:glass"
+  },
+  "tool": "#bloodmagic:arc/hydrate"
+}

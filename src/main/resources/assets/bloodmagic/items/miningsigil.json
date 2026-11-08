@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "bloodmagic:sigil_active",
+    "cases": [
+      {
+        "when": true,
+        "model": {
+          "type": "minecraft:model",
+          "model": "bloodmagic:item/miningsigil_activated"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "bloodmagic:item/miningsigil"
+    }
+  }
+}

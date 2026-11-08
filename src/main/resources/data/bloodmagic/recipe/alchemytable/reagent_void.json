@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:alchemytable",
+  "input": [
+    "minecraft:bucket",
+    "minecraft:string",
+    "minecraft:string",
+    "minecraft:gunpowder"
+  ],
+  "output": {
+    "id": "bloodmagic:reagentvoid"
+  },
+  "syphon": 1000,
+  "ticks": 200,
+  "upgradeLevel": 2
+}

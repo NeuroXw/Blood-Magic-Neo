@@ -1,0 +1,24 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "minecraft:clay_ball"
+      },
+      "chance": 0.5,
+      "mainchance": 0.0
+    }
+  ],
+  "consumeingredient": false,
+  "input": "minecraft:sand",
+  "inputFluid": {
+    "amount": 200,
+    "fluid": "minecraft:water"
+  },
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "minecraft:clay_ball"
+  },
+  "tool": "#bloodmagic:arc/hydrate"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": "#bloodmagic:dungeon_destructive",
+  "result": "bloodmagic:dungeon_tile_slab_destructive"
+}

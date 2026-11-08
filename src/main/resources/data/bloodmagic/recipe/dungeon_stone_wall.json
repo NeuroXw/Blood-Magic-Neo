@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "bloodmagic:dungeon_stone"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_wall",
+    "count": 6
+  },
+  "show_notification": true
+}

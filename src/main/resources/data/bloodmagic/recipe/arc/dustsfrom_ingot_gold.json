@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "#c:ingots/gold",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:goldsand"
+  },
+  "tool": "#bloodmagic:arc/explosive"
+}

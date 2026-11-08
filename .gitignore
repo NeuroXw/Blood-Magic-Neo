@@ -1,0 +1,14 @@
+.gradle/
+build/
+.tools/
+.references/
+run/
+*.log
+build-*.log
+.idea/
+*.iml
+.vscode/
+
+# Internal porting notes, verification scripts, logs, and archived development artifacts stay local.
+.local_docs/
+/docs/

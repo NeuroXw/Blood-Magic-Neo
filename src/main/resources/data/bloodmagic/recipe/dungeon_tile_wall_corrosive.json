@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "bloodmagic:dungeon_tile_corrosive"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_tile_wall_corrosive",
+    "count": 6
+  },
+  "show_notification": true
+}

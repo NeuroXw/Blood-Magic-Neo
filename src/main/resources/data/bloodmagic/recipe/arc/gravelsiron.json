@@ -1,0 +1,20 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "bloodmagic:corrupted_tinydust"
+      },
+      "chance": 0.5,
+      "mainchance": 0.0
+    }
+  ],
+  "consumeingredient": false,
+  "input": "#bloodmagic:fragments/iron",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:irongravel"
+  },
+  "tool": "#bloodmagic:arc/resonator"
+}

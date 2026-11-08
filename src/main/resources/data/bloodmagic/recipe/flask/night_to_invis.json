@@ -1,0 +1,19 @@
+{
+  "type": "bloodmagic:flask_potiontransform",
+  "input": [
+    "minecraft:fermented_spider_eye"
+  ],
+  "inputEffect": [
+    "minecraft:night_vision"
+  ],
+  "outputEffect": [
+    {
+      "baseDuration": 3600,
+      "effect": "minecraft:invisibility"
+    }
+  ],
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "transform"
+}

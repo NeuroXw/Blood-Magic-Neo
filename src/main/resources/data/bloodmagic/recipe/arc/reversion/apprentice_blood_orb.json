@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": true,
+  "input": "bloodmagic:apprenticebloodorb",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "minecraft:redstone_block"
+  },
+  "tool": "#bloodmagic:arc/reverter"
+}

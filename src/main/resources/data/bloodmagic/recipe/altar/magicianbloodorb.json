@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 25000,
+  "consumptionRate": 20,
+  "drainRate": 20,
+  "input": "#c:storage_blocks/gold",
+  "output": {
+    "id": "bloodmagic:magicianbloodorb",
+    "count": 1
+  },
+  "upgradeLevel": 2
+}

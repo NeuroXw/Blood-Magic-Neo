@@ -1,0 +1,9 @@
+{
+  "type": "bloodmagic:array",
+  "addedinput": "bloodmagic:reinforcedslate",
+  "baseinput": "bloodmagic:reagentfastminer",
+  "output": {
+    "id": "bloodmagic:miningsigil"
+  },
+  "texture": "bloodmagic:textures/models/alchemyarrays/fastminersigil.png"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "bloodmagic:vengefulcrystal",
+    "s": "minecraft:stone"
+  },
+  "pattern": [
+    "sss",
+    "scs",
+    "sss"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_vengeful",
+    "count": 64
+  },
+  "show_notification": true
+}

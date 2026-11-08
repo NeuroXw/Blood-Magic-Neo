@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "#bloodmagic:dungeon_vengeful",
+  "result": "bloodmagic:dungeon_tile_vengeful"
+}

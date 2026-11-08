@@ -1,0 +1,41 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "bloodmagic:will_type",
+    "cases": [
+      {
+        "when": "corrosive",
+        "model": {
+          "type": "minecraft:model",
+          "model": "bloodmagic:item/variants/soulgemgreater_corrosive"
+        }
+      },
+      {
+        "when": "destructive",
+        "model": {
+          "type": "minecraft:model",
+          "model": "bloodmagic:item/variants/soulgemgreater_destructive"
+        }
+      },
+      {
+        "when": "steadfast",
+        "model": {
+          "type": "minecraft:model",
+          "model": "bloodmagic:item/variants/soulgemgreater_steadfast"
+        }
+      },
+      {
+        "when": "vengeful",
+        "model": {
+          "type": "minecraft:model",
+          "model": "bloodmagic:item/variants/soulgemgreater_vengeful"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "bloodmagic:item/variants/soulgemgreater"
+    }
+  }
+}

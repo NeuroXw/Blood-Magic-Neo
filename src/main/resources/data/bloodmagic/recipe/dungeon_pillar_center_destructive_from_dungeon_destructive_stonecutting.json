@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": "#bloodmagic:dungeon_destructive",
+  "result": "bloodmagic:dungeon_pillar_center_destructive"
+}

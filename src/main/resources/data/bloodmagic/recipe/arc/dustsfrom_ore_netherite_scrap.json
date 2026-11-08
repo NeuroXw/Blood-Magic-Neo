@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "#c:ores/netherite_scrap",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:sand_netherite",
+    "count": 2
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

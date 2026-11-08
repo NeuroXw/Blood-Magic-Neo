@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:soulforge",
+  "drain": 100,
+  "minimumDrain": 500,
+  "output": {
+    "id": "bloodmagic:demoncrystallizer"
+  },
+  "input": [
+    "bloodmagic:soulforge",
+    "#c:stones",
+    "#c:gems/lapis",
+    "#c:glass_blocks"
+  ]
+}

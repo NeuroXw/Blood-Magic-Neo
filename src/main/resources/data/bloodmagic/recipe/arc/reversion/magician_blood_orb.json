@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": true,
+  "input": "bloodmagic:magicianbloodorb",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "minecraft:gold_block"
+  },
+  "tool": "#bloodmagic:arc/reverter"
+}

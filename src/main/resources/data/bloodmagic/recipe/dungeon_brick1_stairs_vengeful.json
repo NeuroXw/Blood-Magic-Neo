@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "bloodmagic:dungeon_brick1_vengeful"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_brick1_stairs_vengeful",
+    "count": 4
+  },
+  "show_notification": true
+}

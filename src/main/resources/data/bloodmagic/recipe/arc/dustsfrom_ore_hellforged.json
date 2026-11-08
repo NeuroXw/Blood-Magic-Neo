@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "bloodmagic:dungeon_ore",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:sand_hellforged",
+    "count": 3
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

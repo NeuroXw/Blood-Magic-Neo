@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:alchemytable",
+  "input": [
+    "minecraft:sugar",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket"
+  ],
+  "output": {
+    "id": "bloodmagic:reagentwater"
+  },
+  "syphon": 300,
+  "ticks": 200,
+  "upgradeLevel": 1
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "bloodmagic:block/crystal2",
+  "textures": {
+    "crystal": "bloodmagic:block/steadfastcrystal",
+    "particle": "bloodmagic:block/steadfastcrystal"
+  }
+}

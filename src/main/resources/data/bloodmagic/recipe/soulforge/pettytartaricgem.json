@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:soulforge",
+  "drain": 1.0,
+  "minimumDrain": 1.0,
+  "output": {
+    "id": "bloodmagic:soulgempetty"
+  },
+  "input": [
+    "#c:dusts/redstone",
+    "#c:ingots/gold",
+    "minecraft:glass",
+    "#c:gems/lapis"
+  ]
+}

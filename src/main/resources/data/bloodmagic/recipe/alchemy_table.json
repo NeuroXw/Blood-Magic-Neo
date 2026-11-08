@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "#c:ingots/iron",
+    "g": "#c:ingots/gold",
+    "o": "bloodmagic:blankslate",
+    "s": "minecraft:stone",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "sss",
+    "wbw",
+    "gog"
+  ],
+  "result": {
+    "id": "bloodmagic:alchemytable"
+  },
+  "show_notification": true
+}

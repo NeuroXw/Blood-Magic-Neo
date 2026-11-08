@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 2000,
+  "consumptionRate": 20,
+  "drainRate": 10,
+  "input": "#c:storage_blocks/coal",
+  "output": {
+    "id": "bloodmagic:duskscribetool"
+  },
+  "upgradeLevel": 3
+}

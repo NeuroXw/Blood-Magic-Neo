@@ -1,0 +1,9 @@
+{
+  "type": "bloodmagic:array",
+  "addedinput": "bloodmagic:reinforcedslate",
+  "baseinput": "bloodmagic:reagentgrowth",
+  "output": {
+    "id": "bloodmagic:growthsigil"
+  },
+  "texture": "bloodmagic:textures/models/alchemyarrays/growthsigil.png"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:storage_blocks/iron",
+    "S": "bloodmagic:infusedslate",
+    "f": "minecraft:furnace",
+    "o": "bloodmagic:magicianbloodorb",
+    "s": "#c:stones"
+  },
+  "pattern": ["sss", "SoS", "IfI"],
+  "result": { "id": "bloodmagic:alchemicalreactionchamber", "count": 1 }
+}

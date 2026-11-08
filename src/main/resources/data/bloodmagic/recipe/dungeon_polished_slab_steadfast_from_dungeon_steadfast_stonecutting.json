@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": "#bloodmagic:dungeon_steadfast",
+  "result": "bloodmagic:dungeon_polished_slab_steadfast"
+}

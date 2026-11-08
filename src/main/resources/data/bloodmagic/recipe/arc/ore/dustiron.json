@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "minecraft:iron_ore",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:ironsand",
+    "count": 3
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

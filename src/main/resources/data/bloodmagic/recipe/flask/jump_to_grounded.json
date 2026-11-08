@@ -1,0 +1,19 @@
+{
+  "type": "bloodmagic:flask_potiontransform",
+  "input": [
+    "minecraft:cobweb"
+  ],
+  "inputEffect": [
+    "minecraft:jump_boost"
+  ],
+  "outputEffect": [
+    {
+      "baseDuration": 1800,
+      "effect": "bloodmagic:grounded"
+    }
+  ],
+  "syphon": 1000,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "transform"
+}

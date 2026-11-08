@@ -1,0 +1,15 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "minecraft:netherrack",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:sulfur"
+  },
+  "outputFluid": {
+    "amount": 50,
+    "fluid": "minecraft:lava"
+  },
+  "tool": "#bloodmagic:arc/explosive"
+}

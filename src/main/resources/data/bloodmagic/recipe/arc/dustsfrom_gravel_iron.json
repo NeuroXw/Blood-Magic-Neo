@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "#bloodmagic:gravels/iron",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:ironsand"
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

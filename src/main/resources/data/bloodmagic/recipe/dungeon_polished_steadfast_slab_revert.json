@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": "bloodmagic:dungeon_polished_slab_steadfast"
+  },
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_polished_steadfast"
+  },
+  "show_notification": true
+}

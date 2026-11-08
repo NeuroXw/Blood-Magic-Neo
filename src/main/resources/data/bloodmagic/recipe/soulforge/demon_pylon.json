@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:soulforge",
+  "drain": 50,
+  "minimumDrain": 400,
+  "output": {
+    "id": "bloodmagic:demonpylon"
+  },
+  "input": [
+    "#bloodmagic:crystals/demon",
+    "#c:stones",
+    "#c:gems/lapis",
+    "#c:storage_blocks/iron"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "bloodmagic:hellforgedparts"
+      },
+      "chance": 0.0,
+      "mainchance": 1.0
+    },
+    {
+      "type": {
+        "id": "minecraft:netherite_scrap",
+        "count": 4
+      },
+      "chance": 0.0,
+      "mainchance": 1.0
+    }
+  ],
+  "consumeingredient": false,
+  "input": "bloodmagic:dislocationrune2",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:dislocationrune"
+  },
+  "tool": "#bloodmagic:arc/reverter"
+}

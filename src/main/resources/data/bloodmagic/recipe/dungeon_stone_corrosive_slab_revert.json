@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": "bloodmagic:dungeon_stone_slab_corrosive"
+  },
+  "pattern": [
+    "s",
+    "s"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_stone_corrosive"
+  },
+  "show_notification": true
+}

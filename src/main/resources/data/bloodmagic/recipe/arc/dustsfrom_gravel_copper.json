@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "#bloodmagic:gravels/copper",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:coppersand"
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

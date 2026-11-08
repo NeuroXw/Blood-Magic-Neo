@@ -1,0 +1,9 @@
+{
+  "type": "bloodmagic:array",
+  "addedinput": "bloodmagic:infusedslate",
+  "baseinput": "bloodmagic:reagentholding",
+  "output": {
+    "id": "bloodmagic:sigilofholding"
+  },
+  "texture": "bloodmagic:textures/models/alchemyarrays/sightsigil.png"
+}

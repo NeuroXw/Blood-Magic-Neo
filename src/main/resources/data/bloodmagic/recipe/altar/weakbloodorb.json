@@ -1,0 +1,12 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 2000,
+  "consumptionRate": 5,
+  "drainRate": 1,
+  "input": "#c:gems/diamond",
+  "output": {
+    "id": "bloodmagic:weakbloodorb",
+    "count": 1
+  },
+  "upgradeLevel": 0
+}

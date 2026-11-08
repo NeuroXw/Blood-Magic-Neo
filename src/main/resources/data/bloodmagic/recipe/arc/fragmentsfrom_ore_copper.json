@@ -1,0 +1,21 @@
+{
+  "type": "bloodmagic:arc",
+  "addedoutput": [
+    {
+      "type": {
+        "id": "bloodmagic:copperfragment"
+      },
+      "chance": 0.5,
+      "mainchance": 0.0
+    }
+  ],
+  "consumeingredient": false,
+  "input": "#c:ores/copper",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:copperfragment",
+    "count": 4
+  },
+  "tool": "#bloodmagic:arc/explosive"
+}

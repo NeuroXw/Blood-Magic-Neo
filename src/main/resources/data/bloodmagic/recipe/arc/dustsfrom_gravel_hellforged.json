@@ -1,0 +1,11 @@
+{
+  "type": "bloodmagic:arc",
+  "consumeingredient": false,
+  "input": "#bloodmagic:gravels/hellforged",
+  "inputsize": 1,
+  "mainoutputchance": 0.0,
+  "output": {
+    "id": "bloodmagic:sand_hellforged"
+  },
+  "tool": "#bloodmagic:arc/cuttingfluid"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "bloodmagic:flask_potioneffect",
+  "baseDuration": 900,
+  "effect": "minecraft:regeneration",
+  "input": [
+    "bloodmagic:simplecatalyst",
+    "minecraft:ghast_tear"
+  ],
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "effect"
+}

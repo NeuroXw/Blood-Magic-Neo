@@ -1,0 +1,9 @@
+{
+  "type": "bloodmagic:altar",
+  "altarSyphon": 4000,
+  "consumptionRate": 5,
+  "drainRate": 5,
+  "input": "minecraft:glass_bottle",
+  "output": { "id": "bloodmagic:alchemy_flask", "count": 1 },
+  "upgradeLevel": 1
+}

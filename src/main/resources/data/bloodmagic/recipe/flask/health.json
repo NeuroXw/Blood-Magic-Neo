@@ -1,0 +1,13 @@
+{
+  "type": "bloodmagic:flask_potioneffect",
+  "baseDuration": 0,
+  "effect": "minecraft:instant_health",
+  "input": [
+    "bloodmagic:simplecatalyst",
+    "minecraft:glistering_melon_slice"
+  ],
+  "syphon": 500,
+  "ticks": 200,
+  "upgradeLevel": 1,
+  "operation": "effect"
+}

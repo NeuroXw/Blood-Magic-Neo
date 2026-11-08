@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": "bloodmagic:airscribetool",
+    "d": "#c:gems/diamond",
+    "e": "bloodmagic:earthscribetool",
+    "f": "bloodmagic:firescribetool",
+    "s": "minecraft:stick",
+    "w": "bloodmagic:waterscribetool"
+  },
+  "pattern": [
+    "dfd",
+    "ase",
+    "dwd"
+  ],
+  "result": {
+    "id": "bloodmagic:ritualdiviner"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "bloodmagic:dungeon_polished_vengeful"
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_polished_slab_vengeful",
+    "count": 6
+  },
+  "show_notification": true
+}

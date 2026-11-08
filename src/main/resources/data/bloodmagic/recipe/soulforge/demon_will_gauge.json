@@ -1,0 +1,14 @@
+{
+  "type": "bloodmagic:soulforge",
+  "drain": 50,
+  "minimumDrain": 400,
+  "output": {
+    "id": "bloodmagic:demonwillgauge"
+  },
+  "input": [
+    "#c:ingots/gold",
+    "#c:dusts/redstone",
+    "#c:glass_blocks",
+    "#bloodmagic:crystals/demon"
+  ]
+}

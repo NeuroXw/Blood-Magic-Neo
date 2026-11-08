@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "bloodmagic:dungeon_brick1_destructive"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "bloodmagic:dungeon_brick1_wall_destructive",
+    "count": 6
+  },
+  "show_notification": true
+}
