@@ -225,11 +225,11 @@ public final class DungeonDecorativeBlocks {
             // BlockPlaceContext#getClickedPos is already the target position in 26.1.
             BlockPos target = context.getClickedPos();
             BlockState clicked = context.getLevel().getBlockState(target);
-            if (clicked.is(this)) return state.setValue(AXIS, clicked.getValue(AXIS));
+            if (clicked.getBlock() instanceof ConnectingPillarBlock) return state.setValue(AXIS, clicked.getValue(AXIS));
             int[] counts = new int[Direction.Axis.values().length];
             for (Direction direction : Direction.values()) {
                 BlockState neighbor = context.getLevel().getBlockState(target.relative(direction));
-                if (neighbor.is(this)) counts[neighbor.getValue(AXIS).ordinal()]++;
+                if (neighbor.getBlock() instanceof ConnectingPillarBlock) counts[neighbor.getValue(AXIS).ordinal()]++;
             }
             Direction.Axis best = null;
             for (Direction.Axis axis : Direction.Axis.values()) {

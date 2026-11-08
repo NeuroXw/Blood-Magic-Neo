@@ -229,6 +229,7 @@ public final class Stage6SmokeChecks {
         assertions += HotfixRegressionChecks.run(level);
         assertions += Hotfix2RegressionChecks.run(level);
         assertions += Hotfix3RegressionChecks.run(level);
+        assertions += Hotfix4RegressionChecks.run(level);
         assertions += Stage2Checks.run(level);
         assertions += CraftingChainChecks.run(level);
         assertions += Stage1Checks.run(level);

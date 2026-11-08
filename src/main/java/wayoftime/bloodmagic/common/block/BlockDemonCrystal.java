@@ -32,6 +32,7 @@ import wayoftime.bloodmagic.api.compat.EnumDemonWillType;
 import wayoftime.bloodmagic.common.block.entity.BloodMagicBlockEntities;
 import wayoftime.bloodmagic.common.block.entity.DemonCrystalBlockEntity;
 import wayoftime.bloodmagic.common.item.BloodMagicItems;
+import wayoftime.bloodmagic.common.item.ItemCrystalCatalyst;
 import wayoftime.bloodmagic.common.item.ItemDemonCrystal;
 import wayoftime.bloodmagic.will.PlayerDemonWillHandler;
 
@@ -101,6 +102,9 @@ public final class BlockDemonCrystal extends BaseEntityBlock {
         return InteractionResult.PASS;
     }
     @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) { return harvest(state, level, pos, player); }
-    @Override protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) { return harvest(state, level, pos, player); }
+    @Override protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        // Do not let automatic harvesting consume the click before a catalyst's item handler runs.
+        return stack.getItem() instanceof ItemCrystalCatalyst ? InteractionResult.PASS : harvest(state, level, pos, player);
+    }
 }
 

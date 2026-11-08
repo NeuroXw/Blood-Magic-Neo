@@ -4,6 +4,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import wayoftime.bloodmagic.api.compat.EnumDemonWillType;
 import wayoftime.bloodmagic.common.registries.BloodMagicDataComponents;
@@ -94,6 +95,11 @@ public final class ItemDemonWill extends Item {
         }
         if (moved > 0) { player.getInventory().setChanged(); return InteractionResult.SUCCESS_SERVER; }
         return InteractionResult.PASS;
+    }
+    /** 26.1 dispatches held-item block interactions through useOn, not use. */
+    @Override public InteractionResult useOn(UseOnContext context) {
+        Player player = context.getPlayer();
+        return player == null ? InteractionResult.PASS : use(context.getLevel(), player, context.getHand());
     }
     @Override public boolean isBarVisible(ItemStack stack) { return gem; }
     @Override public int getBarWidth(ItemStack stack) { return (int) (13 * amount(stack) / capacity); }
