@@ -69,7 +69,7 @@ final class ArcChecks {
         clear(level, POS); level.setBlockAndUpdate(POS, BloodMagicBlocks.ALCHEMICAL_REACTION_CHAMBER.get().defaultBlockState());
         AlchemicalReactionChamberBlockEntity arc = (AlchemicalReactionChamberBlockEntity) level.getBlockEntity(POS);
         check(arc != null && arc.getType() == wayoftime.bloodmagic.common.block.entity.BloodMagicBlockEntities.ALCHEMICAL_REACTION_CHAMBER.get(), "ARC block entity");
-        arc.setItem(AlchemicalReactionChamberBlockEntity.INPUT_SLOT, new ItemStack(Items.SAND));
+        arc.setItem(AlchemicalReactionChamberBlockEntity.INPUT_SLOT, new ItemStack(Items.SAND, 2));
         arc.setItem(AlchemicalReactionChamberBlockEntity.TOOL_SLOT, new ItemStack(BloodMagicItems.SIMPLE_CATALYST.get()));
         arc.setItem(AlchemicalReactionChamberBlockEntity.INPUT_BUCKET_SLOT, new ItemStack(Items.WATER_BUCKET));
         AlchemicalReactionChamberBlockEntity.serverTick(level, POS, arc.getBlockState(), arc);
@@ -79,7 +79,9 @@ final class ArcChecks {
         tick(arc, 1); check(arc.progress() == 0 && arc.getItem(1).is(Items.CLAY_BALL) && arc.inputFluidAmount() == 800,
                 "ARC atomic item and fluid processing");
         check(arc.getItem(AlchemicalReactionChamberBlockEntity.TOOL_SLOT).isEmpty()
-                && arc.getItem(AlchemicalReactionChamberBlockEntity.INPUT_SLOT).is(Items.SAND), "ARC honours consumeingredient=false and consumes the non-damageable catalyst");
+                && arc.getItem(AlchemicalReactionChamberBlockEntity.INPUT_SLOT).is(Items.SAND)
+                && arc.getItem(AlchemicalReactionChamberBlockEntity.INPUT_SLOT).getCount() == 1,
+                "ARC consumes exactly one input per recipe instead of duplicating it");
 
         PotionRecipe recipe = level.getServer().getRecipeManager().byKey(recipeKey("flask/speed_boost")).orElseThrow().value()
                 instanceof PotionRecipe p ? p : null;

@@ -498,7 +498,8 @@ final class DemonWillRitualEffects {
             int cost = Math.max((int) (500 - raw), 0);
             if (master.currentLp() < lp + cost) break;
             BlockState state = level.getBlockState(pos);
-            if (!level.isEmptyBlock(pos) && !state.getFluidState().isEmpty() && !state.getFluidState().isSource()) continue;
+            boolean flowingLiquid = !state.getFluidState().isEmpty() && !state.getFluidState().isSource();
+            if (!state.isAir() && !flowingLiquid) continue;
             if (!WorldAccess.mayPlace(level, pos, Blocks.LAVA.defaultBlockState(), actor)) continue;
             level.setBlockAndUpdate(pos, Blocks.LAVA.defaultBlockState());
             lp += cost;

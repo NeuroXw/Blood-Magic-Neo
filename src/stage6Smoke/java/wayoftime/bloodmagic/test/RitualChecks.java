@@ -30,6 +30,7 @@ public final class RitualChecks {
     private static final BlockPos POS=new BlockPos(536,180,520);
     private static final BlockPos SAVE=new BlockPos(620,180,600);
     private static final BlockPos GROW=POS.offset(16,0,0);
+    private static final BlockPos LAVA=POS.offset(0,0,16);
     private static java.util.concurrent.CompletableFuture<?> lighting;
     private static long lightDeadline;
     private static final UUID OWNER=UUID.fromString("e98430df-96db-4a9f-85e1-883eeea00061");
@@ -106,7 +107,7 @@ public final class RitualChecks {
         var scribe=new ItemStack(BloodMagicItems.FIRE_SCRIBE.get());player.setItemInHand(InteractionHand.MAIN_HAND,scribe);
         check(scribe.getItem().useOn(context(POS.offset(-1,0,-1))).consumesAction()&&scribe.getDamageValue()==1,"inscription tool retunes rune with one durability");
         check(!scribe.getItem().useOn(context(POS.offset(-1,0,-1))).consumesAction()&&scribe.getDamageValue()==1,"identical inscription costs no durability");
-        testCrushing(level);testGrowth(level);
+        testCrushing(level);testLava(level);testGrowth(level);
         check(BasicRitual.values().length == 32 && BasicRitual.ANIMAL_GROWTH.components().size() > 0
                 && BasicRitual.STANDARD_DUNGEON.components().size() > 0, "all 32 upstream rituals have their rune geometry");
         player.setItemInHand(InteractionHand.MAIN_HAND,diviner);
@@ -127,6 +128,18 @@ public final class RitualChecks {
         level.setBlockAndUpdate(target,Blocks.CHEST.defaultBlockState());tick(master,40);check(balance(level)==993&&level.getBlockEntity(target) instanceof ChestBlockEntity,"mining preserves block entity inventories");
         var rune=BasicRitual.CRUSHING.components().getFirst();level.setBlockAndUpdate(POS.offset(rune.offset()),Blocks.STONE.defaultBlockState());tick(master,1);
         check(!master.active()&&balance(level)==993,"wrong rune stops mining immediately");
+    }
+    private static void testLava(ServerLevel level){
+        var master=place(level,LAVA,BasicRitual.LAVA,true);move(LAVA);balance(level,20000);
+        boolean activated=master.activate(player,BINDING);
+        check(activated&&master.active()&&master.ritual()==BasicRitual.LAVA&&balance(level)==10000,
+                "lava ritual activates for 10000 LP: active="+master.active()+", ritual="+master.ritual()
+                        +", balance="+balance(level)+", scan="+BasicRitual.LAVA.scan(level,LAVA));
+        level.setBlockAndUpdate(LAVA.above(),Blocks.STONE.defaultBlockState());tick(master,2);
+        check(level.getBlockState(LAVA.above()).is(Blocks.STONE)&&balance(level)==10000,"lava ritual never replaces solid blocks");
+        level.setBlockAndUpdate(LAVA.above(),Blocks.AIR.defaultBlockState());tick(master,1);
+        check(level.getBlockState(LAVA.above()).is(Blocks.LAVA)&&balance(level)==9500,"lava ritual still fills empty space for 500 LP");
+        clearArea(level,LAVA);move(POS);
     }
     private static void testGrowth(ServerLevel level){
         var master=(MasterRitualBlockEntity)level.getBlockEntity(GROW);move(GROW);balance(level,6000);

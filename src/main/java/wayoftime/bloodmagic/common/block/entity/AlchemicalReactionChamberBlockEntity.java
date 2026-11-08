@@ -94,7 +94,7 @@ public final class AlchemicalReactionChamberBlockEntity extends MachineInventory
         if (++arc.progress < WORK_TICKS) { arc.setChanged(); return; }
         if (recipe.inputFluid().isPresent()) arc.inputAmount -= recipe.inputFluid().get().amount();
         if (recipe.outputFluid().isPresent()) { arc.outputFluid = recipe.outputFluid().get().fluid(); arc.outputAmount += recipe.outputFluid().get().amount(); }
-        if (recipe.consumeIngredient()) arc.items.get(INPUT_SLOT).shrink(recipe.inputSize());
+        arc.consumeRecipeInput(recipe);
         for (ItemStack result : results) arc.insertResult(result);
         arc.damageTool();
         arc.progress = 0; arc.recipeId = null; arc.definition = null; arc.setLit(false); arc.setChanged();
@@ -167,6 +167,19 @@ public final class AlchemicalReactionChamberBlockEntity extends MachineInventory
             tool.shrink(1);
             if (tool.isEmpty()) items.set(TOOL_SLOT, ItemStack.EMPTY);
         }
+    }
+
+    /** Upstream consumeInventory: consume the input, or replace it with its crafting remainder when configured. */
+    private void consumeRecipeInput(ArcRecipe recipe) {
+        ItemStack input = items.get(INPUT_SLOT);
+        if (input.isEmpty()) return;
+        var remainder = recipe.consumeIngredient() ? null : input.getCraftingRemainder();
+        if (remainder != null) {
+            items.set(INPUT_SLOT, remainder.create());
+            return;
+        }
+        input.shrink(recipe.inputSize());
+        if (input.isEmpty()) items.set(INPUT_SLOT, ItemStack.EMPTY);
     }
 
     private void setLit(boolean lit) {
